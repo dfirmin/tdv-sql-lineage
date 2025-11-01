@@ -76,7 +76,14 @@ def _relative_path(file_path: Path, base_dir: Path) -> str:
 def _deduplicate_edges(edges: Iterable[LineageEdge]) -> List[LineageEdge]:
     unique: Dict[tuple, LineageEdge] = {}
     for edge in edges:
-        key = (edge.source, edge.target, edge.temp, edge.inferred)
+        key = (
+            edge.source,
+            edge.target,
+            edge.source_column,
+            edge.target_column,
+            edge.temp,
+            edge.inferred,
+        )
         existing = unique.get(key)
         if existing is None:
             unique[key] = edge
