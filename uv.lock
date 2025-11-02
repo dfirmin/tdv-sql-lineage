@@ -1,0 +1,23 @@
+version = 1
+revision = 2
+requires-python = ">=3.10"
+
+[[package]]
+name = "sqlglot"
+version = "23.17.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e5/54/56a4eb59df797e646fd63ff490ea8533f632c5b0ca921601363455edc737/sqlglot-23.17.0.tar.gz", hash = "sha256:8e5786f26b0b337921cabc32d1222238c9e56f34560e1ac65a9b36178f9bb9e4", size = 13185796, upload-time = "2024-05-19T23:23:27.19Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4a/9e/2fd1def6f640b216e7e0aa532af75822bc8a658dc242dda6c4c8765a1c25/sqlglot-23.17.0-py3-none-any.whl", hash = "sha256:ecd860f4a8278600c537755bcbd60b1a63ef6a0dc33dfb16170ea428422749de", size = 399134, upload-time = "2024-05-19T23:23:20.4Z" },
+]
+
+[[package]]
+name = "tdv-sql-lineage"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "sqlglot" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "sqlglot", specifier = ">=23.0.0,<24.0.0" }]
