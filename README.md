@@ -40,7 +40,21 @@ python -m lineage scan PATH/TO/PROJECT \
 
 - `PATH/TO/PROJECT`: Optional project directory to scan recursively. Omit this argument when only `--file` inputs are needed.
 - `--file`: One or more explicit Python files to include. Repeat the flag to combine multiple single-file scans.
-- `--config`: Optional JSON file that provides values for `common_config`. The tool accepts either a top-level `{"common_config": {...}}` object or a bare dictionary.
+- `--config`: Optional JSON file that provides values for `common_config`. The tool accepts either a top-level `{"common_config": {...}}` object or a bare dictionary. You can also include an optional `label_overrides` block to rewrite table names in the output:
+
+  ```json
+  {
+    "common_config": {
+      "lz_dbname": "LZ",
+      "base_dbname": "BASE"
+    },
+    "label_overrides": {
+      "{{common_config.lz_dbname}}": "CCW_LZ",
+      "{{common_config.base_dbname}}": "CCW_BASE"
+    }
+  }
+  ```
+
 - `--output`: Output file for lineage results (default `lineage.json`).
 - `--infer`: Enable inference of indirect lineage through volatile tables.
 
@@ -49,14 +63,22 @@ The generated JSON is a list of objects:
 ```json
 [
   {
-    "source": "LZ.CCW_CDSET_XWALK",
-    "target": "vt_src_cd_val_xwalk",
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
     "temp": true,
     "file": "example.py",
-    "function": "vt_src_cd_val_xwalk"
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "SRC_CDSET_NM",
+    "mapping_rule": "DIRECT_MOVE"
   }
 ]
 ```
+
+- `source_table` / `target_table`: Table-level lineage.
+- `temp`: `true` when the target came from a `CREATE VOLATILE TABLE` (useful for identifying session-scoped tables), otherwise `false`.
+- `source_column` / `target_column`: Column lineage when available.
+- `mapping_rule`: Either `DIRECT_MOVE` (the target column is a direct passthrough of the source column, e.g., `COALESCE(src.col, ' ')`) or `TRANSFORMATION` for derived values (hashes, concatenations, CASE expressions, multi-column expressions, constants, etc.). Missing `source_column` entries indicate that the tool could not resolve the exact input (for example, `DELETE FROM` without sources).
 
 ## Development
 

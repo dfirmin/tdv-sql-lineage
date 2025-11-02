@@ -21,11 +21,14 @@ class LineageEdge:
     inferred: bool = False
     source_column: Optional[str] = None
     target_column: Optional[str] = None
+    mapping_rule: Optional[str] = None
 
     def to_dict(self) -> dict:
-        payload = {"source": self.source, "target": self.target}
-        if self.temp:
-            payload["temp"] = True
+        payload = {
+            "source_table": self.source,
+            "target_table": self.target,
+            "temp": self.temp,
+        }
         if self.file:
             payload["file"] = self.file
         if self.function:
@@ -36,6 +39,8 @@ class LineageEdge:
             payload["source_column"] = self.source_column
         if self.target_column:
             payload["target_column"] = self.target_column
+        if self.mapping_rule:
+            payload["mapping_rule"] = self.mapping_rule
         return payload
 
 
@@ -389,6 +394,7 @@ def _column_lineage_from_update(
             replacements,
             default_table=default_table,
         )
+        mapping_rule = _mapping_rule_for_expression(assignment.expression, sources)
         if not sources:
             edges.append(
                 LineageEdge(
@@ -398,6 +404,7 @@ def _column_lineage_from_update(
                     file=filename,
                     function=function,
                     target_column=target_column,
+                    mapping_rule=mapping_rule,
                 )
             )
             continue
@@ -412,6 +419,7 @@ def _column_lineage_from_update(
                     function=function,
                     source_column=source_column,
                     target_column=target_column,
+                    mapping_rule=mapping_rule,
                 )
             )
     return edges
@@ -490,6 +498,7 @@ def _column_lineage_from_select(
             replacements,
             default_table=default_table,
         )
+        mapping_rule = _mapping_rule_for_expression(expression, sources)
         if not sources:
             edges.append(
                 LineageEdge(
@@ -499,6 +508,7 @@ def _column_lineage_from_select(
                     file=filename,
                     function=function,
                     target_column=target_column,
+                    mapping_rule=mapping_rule,
                 )
             )
             continue
@@ -512,6 +522,7 @@ def _column_lineage_from_select(
                     function=function,
                     source_column=source_column,
                     target_column=target_column,
+                    mapping_rule=mapping_rule,
                 )
             )
     return edges
@@ -524,13 +535,10 @@ def _source_columns_from_expression(
     *,
     default_table: Optional[str] = None,
 ) -> List[Tuple[str, str]]:
-    columns = list(expression.find_all(exp.Column))
-    if not columns:
-        return []
-
     results: List[Tuple[str, str]] = []
     seen: Set[Tuple[str, str]] = set()
-    for column in columns:
+
+    def _record(column: exp.Column) -> None:
         column_name = _restore_placeholders(column.name or column.sql(dialect="teradata"), replacements)
         table_key = column.table or ""
         source_table = alias_map.get(table_key)
@@ -542,10 +550,59 @@ def _source_columns_from_expression(
         source_table = source_table or "<unknown>"
         key = (source_table, column_name)
         if key in seen:
-            continue
+            return
         seen.add(key)
-        results.append((source_table, column_name))
+        results.append(key)
+
+    def _walk(node: Optional[exp.Expression]) -> None:
+        if node is None:
+            return
+        if isinstance(node, exp.Case):
+            branches = node.args.get("ifs") or []
+            for branch in branches:
+                if isinstance(branch, (tuple, list)) and len(branch) == 2:
+                    _, result = branch
+                    _walk(result)
+                elif isinstance(branch, exp.When):
+                    _walk(branch.args.get("true"))
+                else:
+                    _walk(branch)
+            _walk(node.args.get("default"))
+            return
+        if isinstance(node, exp.When):
+            _walk(node.args.get("true"))
+            _walk(node.args.get("false"))
+            return
+        if isinstance(node, exp.If):
+            _walk(node.args.get("true"))
+            _walk(node.args.get("false"))
+            return
+        if isinstance(node, exp.Column):
+            _record(node)
+            return
+        for child in node.iter_expressions():
+            _walk(child)
+
+    _walk(expression)
     return results
+
+
+def _mapping_rule_for_expression(
+    expression: exp.Expression, sources: Sequence[Tuple[str, str]]
+) -> str:
+    if isinstance(expression, exp.Alias):
+        return _mapping_rule_for_expression(expression.this, sources)
+    if len(sources) != 1:
+        return TRANSFORMATION
+    if isinstance(expression, exp.Column):
+        return DIRECT_MOVE
+    if isinstance(expression, exp.Identifier):
+        return DIRECT_MOVE
+    if isinstance(expression, exp.Coalesce):
+        first = expression.this
+        if isinstance(first, exp.Column):
+            return DIRECT_MOVE
+    return TRANSFORMATION
 
 
 def _default_source_table(
@@ -702,3 +759,5 @@ def _regex_sources(sql_text: str) -> List[str]:
 
 def _clean_identifier(identifier: str) -> str:
     return identifier.strip().strip(";()\"`[]")
+DIRECT_MOVE = "DIRECT_MOVE"
+TRANSFORMATION = "TRANSFORMATION"

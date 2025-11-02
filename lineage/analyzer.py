@@ -81,6 +81,7 @@ def _deduplicate_edges(edges: Iterable[LineageEdge]) -> List[LineageEdge]:
             edge.target,
             edge.source_column,
             edge.target_column,
+            edge.mapping_rule,
             edge.temp,
             edge.inferred,
         )
@@ -124,9 +125,34 @@ def _infer_indirect_edges(edges: Iterable[LineageEdge]) -> List[LineageEdge]:
     return inferred
 
 
-def write_lineage(edges: List[LineageEdge], output_path: Path) -> None:
-    payload = [edge.to_dict() for edge in edges]
+def write_lineage(
+    edges: List[LineageEdge],
+    output_path: Path,
+    *,
+    label_overrides: Optional[Dict[str, str]] = None,
+) -> None:
+    overrides = label_overrides or {}
+    payload = []
+    for edge in edges:
+        data = edge.to_dict()
+        data["source_table"] = _apply_label_override(data.get("source_table"), overrides)
+        data["target_table"] = _apply_label_override(data.get("target_table"), overrides)
+        payload.append(data)
     output_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+
+def _apply_label_override(value: Optional[str], overrides: Dict[str, str]) -> Optional[str]:
+    if not value:
+        return value
+    result = value
+    for key, replacement in overrides.items():
+        if not key:
+            continue
+        if result == key:
+            return replacement
+        if result.startswith(key):
+            return replacement + result[len(key) :]
+    return result
 
 
 __all__ = ["scan_path", "scan_paths", "write_lineage", "LineageEdge"]

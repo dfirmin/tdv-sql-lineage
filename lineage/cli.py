@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Tuple
 
 from .analyzer import scan_paths, write_lineage
 
@@ -25,10 +25,14 @@ def main(argv: Optional[list[str]] = None) -> None:
         parser.error("provide either a project path or at least one --file")
 
     target_paths = [Path(item) for item in target_strings]
-    common_config = _load_common_config(args.config) if args.config else {}
+    common_config: Dict[str, Any] = {}
+    label_overrides: Dict[str, str] = {}
+    if args.config:
+        common_config, label_overrides = _load_scan_config(args.config)
+
     edges = scan_paths(target_paths, common_config=common_config, infer=args.infer)
     output_path = Path(args.output)
-    write_lineage(edges, output_path)
+    write_lineage(edges, output_path, label_overrides=label_overrides)
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -60,15 +64,32 @@ def _build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _load_common_config(config_path: str) -> Dict[str, Any]:
+def _load_scan_config(config_path: str) -> Tuple[Dict[str, Any], Dict[str, str]]:
     payload = json.loads(Path(config_path).read_text(encoding="utf-8"))
-    if isinstance(payload, dict) and "common_config" in payload:
+    common_config: Dict[str, Any] = {}
+    label_overrides: Dict[str, str] = {}
+
+    if not isinstance(payload, dict):
+        raise ValueError("Configuration file must contain a JSON object")
+
+    if "common_config" in payload:
         candidate = payload["common_config"]
         if isinstance(candidate, dict):
-            return candidate
-    if isinstance(payload, dict):
-        return payload
-    raise ValueError("Configuration file must contain a JSON object")
+            common_config = candidate
+    else:
+        residual = {
+            key: value
+            for key, value in payload.items()
+            if key not in {"label_overrides", "output_labels"}
+        }
+        common_config = residual
+
+    raw_overrides = payload.get("label_overrides") or payload.get("output_labels")
+    if isinstance(raw_overrides, dict):
+        label_overrides = {str(key): str(value) for key, value in raw_overrides.items()}
+
+    normalized_common = {key: str(value) for key, value in common_config.items()}
+    return normalized_common, label_overrides
 
 
 __all__ = ["main"]
