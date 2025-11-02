@@ -58,6 +58,33 @@ python -m lineage scan PATH/TO/PROJECT \
 - `--output`: Output file for lineage results (default `lineage.json`).
 - `--infer`: Enable inference of indirect lineage through volatile tables.
 
+### Example Commands
+
+Scan a single file and write the output to `test_output_1.json`:
+
+```bash
+uv run -m lineage scan --file test/test_1.py \
+  --config config_labels.json \
+  --output test_output_1.json
+```
+
+Scan an entire directory (recursively) and infer indirect edges:
+
+```bash
+uv run -m lineage scan test \
+  --config config_labels.json \
+  --infer \
+  --output test_output_inferred.json
+```
+
+Mix a directory with additional single-file targets:
+
+```bash
+uv run -m lineage scan src/etl --file scripts/extra_job.py \
+  --config config_labels.json \
+  --output lineage.json
+```
+
 The generated JSON is a list of objects:
 
 ```json
