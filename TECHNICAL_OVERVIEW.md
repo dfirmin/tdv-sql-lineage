@@ -42,6 +42,7 @@ Thin wrapper that calls `cli.main()` when the package is executed via `python -m
   - `temp` (volatile flag)
   - `source_column`, `target_column`
   - `mapping_rule` (`DIRECT_MOVE` vs `TRANSFORMATION`)
+- `write_lineage_csv` mirrors the JSON payload in CSV form (optional `--csv-output`).
 - All helper functions live in the same module to keep orchestration logic together.
 
 ### `lineage/extractor/__init__.py`

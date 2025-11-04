@@ -57,9 +57,24 @@ python -m lineage scan PATH/TO/PROJECT \
 
 - `--output`: Output file for lineage results (default `lineage.json`).
 - `--infer`: Enable inference of indirect lineage through volatile tables.
+- `--csv-output`: Optional CSV file path to generate UDD-friendly lineage rows alongside the JSON output.
 - `--repo`: Clone a remote repository (HTTPS URL) into a temporary directory and scan it.
 - `--ref`: Optional branch, tag, or commit to check out when using `--repo`.
 - `--repo-subpath`: Optional subdirectory within the cloned repository to scan (defaults to the repo root or the path parsed from a GitHub `.../tree/<ref>/<path>` URL).
+
+### CLI Flags
+
+| Flag             | Description                                                                                     | Example |
+|------------------|-------------------------------------------------------------------------------------------------|---------|
+| positional path  | Optional directory to scan recursively. Omit when only using `--file`.                          | `test` |
+| `--file`         | Specify a Python file. Repeatable.                                                               | `--file test/test_1.py` |
+| `--config`       | Path to JSON providing `common_config` overrides and optional `label_overrides`.                 | `--config config_labels.json` |
+| `--output`       | JSON output file (defaults to `lineage.json`).                                                   | `--output test/output/test_output_1.json` |
+| `--infer`        | Adds inferred edges by collapsing volatile table hops.                                           | `--infer` |
+| `--csv-output`   | Writes a CSV in addition to JSON (columns align with `source_table`, `mapping_rule`, etc.).      | `--csv-output test/output/test_output_1.csv` |
+| `--repo`         | Clone a remote repo (GitHub.com or Enterprise) and scan it. Accepts `tree/...` or `blob/...` URLs.| `--repo https://github.com/org/repo/tree/main/etl` |
+| `--ref`          | Ref (branch/tag/commit) to checkout when using `--repo`. Overrides any ref in the URL.            | `--ref release-2024.03` |
+| `--repo-subpath` | Subdirectory inside the cloned repo to scan. Overrides path parsed from the URL.                 | `--repo-subpath src/jobs` |
 
 ### Example Commands
 
@@ -69,6 +84,15 @@ Scan a single file and write the output to `test_output_1.json`:
 uv run -m lineage scan --file test/test_1.py \
   --config config_labels.json \
   --output test_output_1.json
+```
+
+Produce both JSON and CSV from a single-file scan:
+
+```bash
+uv run -m lineage scan --file test/test_1.py \
+  --config config_labels.json \
+  --output test/output/test_output_1.json \
+  --csv-output test/output/test_output_1.csv
 ```
 
 Scan an entire directory (recursively) and infer indirect edges:
@@ -96,6 +120,14 @@ uv run -m lineage scan --repo https://github.com/dfirmin/tdv-sql-lineage/tree/ma
   --output test/output/from_repo.json
 ```
 
+Scan a single GitHub file (same flags work; just provide a `blob/<ref>/<path>` URL — GitHub Enterprise hosts are supported):
+
+```bash
+uv run -m lineage scan --repo https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py \
+  --config config_labels.json \
+  --output test/output/from_repo_single.json
+```
+
 The generated JSON is a list of objects:
 
 ```json
@@ -118,6 +150,17 @@ The generated JSON is a list of objects:
 - `source_column` / `target_column`: Column lineage when available.
 - `file`: Source location. Relative path for local scans, or a GitHub `blob/<ref>/...` URL when `--repo` is used.
 - `mapping_rule`: Either `DIRECT_MOVE` (the target column is a direct passthrough of the source column, e.g., `COALESCE(src.col, ' ')`) or `TRANSFORMATION` for derived values (hashes, concatenations, CASE expressions, multi-column expressions, constants, etc.). Missing `source_column` entries indicate that the tool could not resolve the exact input (for example, `DELETE FROM` without sources).
+
+### Output Files
+
+- **JSON** (default): list of edges with keys:
+  - `source_table` / `target_table`
+  - `temp`
+  - `file` / `function`
+  - `source_column` / `target_column`
+  - `mapping_rule`
+  - `inferred` (only present for inferred edges)
+- **CSV** (optional via `--csv-output`): columns mirror the JSON fields for UDD-style consumption (`source_table`, `source_column`, `target_table`, `target_column`, `temp`, `mapping_rule`, `file`, `function`, `inferred`).
 
 ## Development
 

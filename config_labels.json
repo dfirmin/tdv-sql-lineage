@@ -3,6 +3,7 @@
     "{{common_config.lz_dbname}}": "CCW_LZ",
     "{{common_config.base_dbname}}": "CCW_BASE",
     "{{common_config.ccw_aud}}": "CCW_AUD",
-    "{{common_config.stg_dbname}}": "CCW_STG"
+    "{{common_config.stg_dbname}}": "CCW_STG",
+    "{{common_config.view_dbname}}": "CCW_VIEW"
   }
 }

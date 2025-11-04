@@ -8,7 +8,7 @@ import tempfile
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, List
 
-from .analyzer import RepoContext, scan_paths, write_lineage
+from .analyzer import RepoContext, scan_paths, write_lineage, write_lineage_csv
 
 
 def main(argv: Optional[list[str]] = None) -> None:
@@ -77,6 +77,9 @@ def main(argv: Optional[list[str]] = None) -> None:
         )
         output_path = Path(args.output)
         write_lineage(edges, output_path, label_overrides=label_overrides)
+        if args.csv_output:
+            csv_path = Path(args.csv_output)
+            write_lineage_csv(edges, csv_path, label_overrides=label_overrides)
     finally:
         if repo_tempdir is not None:
             repo_tempdir.cleanup()
@@ -107,6 +110,10 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     scan_parser.add_argument(
         "--infer", action="store_true", help="Infer multi-hop lineage through volatile tables"
+    )
+    scan_parser.add_argument(
+        "--csv-output",
+        help="Optional CSV file to generate alongside JSON output",
     )
     scan_parser.add_argument(
         "--repo",
@@ -188,15 +195,23 @@ def _materialize_repo(
     return [target], repo_url, clone_dir, effective_subpath
 
 
-GITHUB_TREE_PATTERN = re.compile(
-    r"^(https://github\.com/[^/]+/[^/]+)(?:/tree/([^/]+)(?:/(.*))?)?$"
+# Match GitHub.com and GitHub Enterprise hosts.
+TREE_PATTERN = re.compile(
+    r"^(https://[^/]+/[^/]+/[^/]+)(?:/tree/([^/]+)(?:/(.*))?)?$"
+)
+BLOB_PATTERN = re.compile(
+    r"^(https://[^/]+/[^/]+/[^/]+)/blob/([^/]+)/(.*)$"
 )
 
 
 def _parse_repo_arg(repo_arg: str) -> Tuple[str, Optional[str], Optional[str]]:
-    matched = GITHUB_TREE_PATTERN.match(repo_arg)
-    if matched:
-        base_url, ref, subpath = matched.groups()
+    tree_match = TREE_PATTERN.match(repo_arg)
+    if tree_match:
+        base_url, ref, subpath = tree_match.groups()
+        return base_url, ref, subpath
+    blob_match = BLOB_PATTERN.match(repo_arg)
+    if blob_match:
+        base_url, ref, subpath = blob_match.groups()
         return base_url, ref, subpath
     return repo_arg, None, None
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+import csv
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
@@ -193,4 +194,50 @@ def _apply_label_override(value: Optional[str], overrides: Dict[str, str]) -> Op
     return result
 
 
-__all__ = ["scan_path", "scan_paths", "write_lineage", "LineageEdge", "RepoContext"]
+def write_lineage_csv(
+    edges: List[LineageEdge],
+    output_path: Path,
+    *,
+    label_overrides: Optional[Dict[str, str]] = None,
+) -> None:
+    overrides = label_overrides or {}
+    headers = [
+        "source_table",
+        "source_column",
+        "target_table",
+        "target_column",
+        "temp",
+        "mapping_rule",
+        "file",
+        "function",
+        "inferred",
+    ]
+    with output_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=headers)
+        writer.writeheader()
+        for edge in edges:
+            source = _apply_label_override(edge.source, overrides)
+            target = _apply_label_override(edge.target, overrides)
+            writer.writerow(
+                {
+                    "source_table": source or "",
+                    "source_column": edge.source_column or "",
+                    "target_table": target or "",
+                    "target_column": edge.target_column or "",
+                    "temp": str(edge.temp).lower(),
+                    "mapping_rule": edge.mapping_rule or "",
+                    "file": edge.file or "",
+                    "function": edge.function or "",
+                    "inferred": str(edge.inferred).lower(),
+                }
+            )
+
+
+__all__ = [
+    "scan_path",
+    "scan_paths",
+    "write_lineage",
+    "write_lineage_csv",
+    "LineageEdge",
+    "RepoContext",
+]
