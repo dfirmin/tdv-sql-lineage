@@ -51,6 +51,7 @@ Exposes the extractor package.
 ### `lineage/extractor/ast_extractor.py`
 - Parses Python source using `ast.parse`.
 - `StatementExtractor` visits function definitions to track the current function stack, then finds `ccw.Statement(...)` invocations.
+- SQL execution call detection is driven by the registry in `lineage/extractor/patterns.py`; each pattern describes a call-path (e.g., `ccw.Statement`, bare `Statement`) and which argument carries the SQL. Adding new adapters (e.g., cursor `.execute` calls) is as simple as appending a pattern.
 - Reconstructs the SQL argument:
   - Handles positional or keyword arguments.
   - Evaluates literals, concatenations (`BinOp +`), f-strings, simple wrapper calls (`str(...)`, etc.), and dictionary lookups (`common_config['key']`).

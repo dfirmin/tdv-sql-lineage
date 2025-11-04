@@ -171,3 +171,12 @@ python -m lineage scan ./tests/fixtures --config config.json
 ```
 
 Pull requests should include updated lineage examples and unit tests once available.
+
+### Extending SQL Detection
+
+The list of SQL execution patterns lives in `lineage/extractor/patterns.py`. Each entry defines:
+
+- The call-path to match (e.g., `("ccw", "Statement")` or `("Statement",)`), and
+- Which positional/keyword argument carries the SQL string.
+
+Add new patterns (for example, to support `cursor.execute(...)`) by appending to that registry—no changes to the extractor logic are required.

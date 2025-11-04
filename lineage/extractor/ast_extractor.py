@@ -3,8 +3,9 @@ from __future__ import annotations
 import ast
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
+from .patterns import SQL_CALL_PATTERNS, CallPattern
 
 @dataclass
 class ExtractedStatement:
@@ -46,8 +47,10 @@ class StatementExtractor(ast.NodeVisitor):
         self._function_stack.pop()
 
     def visit_Call(self, node: ast.Call) -> None:  # noqa: N802
-        if self._is_ccw_statement(node):
-            sql_text = self._extract_sql_argument(node)
+        match = self._match_sql_call(node)
+        if match:
+            pattern, target_node = match
+            sql_text = self._resolve_node(target_node)
             if sql_text:
                 self.statements.append(
                     ExtractedStatement(
@@ -63,26 +66,29 @@ class StatementExtractor(ast.NodeVisitor):
     # ------------------------------------------------------------------
     # Extraction helpers
     # ------------------------------------------------------------------
-    @staticmethod
-    def _is_ccw_statement(node: ast.Call) -> bool:
-        func = node.func
-        if isinstance(func, ast.Attribute):
-            return func.attr == "Statement"
-        if isinstance(func, ast.Name):
-            return func.id == "Statement"
-        return False
+    def _match_sql_call(self, node: ast.Call) -> Optional[Tuple[CallPattern, ast.AST]]:
+        call_path = self._call_path(node.func)
+        for pattern in SQL_CALL_PATTERNS:
+            if pattern.matches(call_path):
+                argument = pattern.extract_argument(node)
+                if argument is not None:
+                    return pattern, argument
+        return None
 
-    def _extract_sql_argument(self, node: ast.Call) -> Optional[str]:
-        target_node: Optional[ast.AST] = None
-        for kw in node.keywords:
-            if kw.arg == "statement":
-                target_node = kw.value
-                break
-        if target_node is None and node.args:
-            target_node = node.args[0]
-        if target_node is None:
-            return None
-        return self._resolve_node(target_node)
+    @staticmethod
+    def _call_path(func: ast.AST) -> Optional[Tuple[str, ...]]:
+        if isinstance(func, ast.Name):
+            return (func.id,)
+        if isinstance(func, ast.Attribute):
+            parts: List[str] = []
+            current: ast.AST = func
+            while isinstance(current, ast.Attribute):
+                parts.append(current.attr)
+                current = current.value
+            if isinstance(current, ast.Name):
+                parts.append(current.id)
+                return tuple(reversed(parts))
+        return None
 
     # pylint: disable=too-many-return-statements
     def _resolve_node(self, node: ast.AST, *, local_env: Optional[Dict[str, str]] = None) -> str:
