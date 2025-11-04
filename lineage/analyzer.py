@@ -1,11 +1,27 @@
 from __future__ import annotations
 
 import json
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Sequence
+from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 from .extractor.ast_extractor import extract_statements_from_file
 from .parser.sql_parser import LineageEdge, parse_sql_lineage
+
+
+@dataclass(frozen=True)
+class RepoContext:
+    base_url: str
+    ref: Optional[str]
+    root: Path
+
+    def file_url(self, file_path: Path) -> Optional[str]:
+        try:
+            relative = file_path.relative_to(self.root)
+        except ValueError:
+            return None
+        ref = self.ref or "HEAD"
+        return f"{self.base_url}/blob/{ref}/{relative.as_posix()}"
 
 
 def scan_paths(
@@ -13,14 +29,26 @@ def scan_paths(
     *,
     common_config: Optional[Dict[str, object]] = None,
     infer: bool = False,
+    repo_contexts: Optional[Dict[Path, RepoContext]] = None,
 ) -> List[LineageEdge]:
     """Scan *paths* (files or directories) and return lineage edges."""
 
     normalized_config = {key: str(value) for key, value in (common_config or {}).items()}
 
     edges: List[LineageEdge] = []
+    context_map = repo_contexts or {}
+    resolved_map: Dict[Path, RepoContext] = {}
+    for key, value in context_map.items():
+        resolved_map[key] = value
+        try:
+            resolved_map[key.resolve()] = value
+        except OSError:
+            pass
     for path in paths:
-        edges.extend(_scan_single_path(path, normalized_config))
+        context = resolved_map.get(path)
+        if context is None:
+            context = resolved_map.get(path.resolve())
+        edges.extend(_scan_single_path(path, normalized_config, context))
 
     deduped = _deduplicate_edges(edges)
     if infer:
@@ -35,13 +63,19 @@ def scan_path(
     *,
     common_config: Optional[Dict[str, object]] = None,
     infer: bool = False,
+    repo_context: Optional[RepoContext] = None,
 ) -> List[LineageEdge]:
     """Scan a single *path* for Python files and return lineage edges."""
 
-    return scan_paths([path], common_config=common_config, infer=infer)
+    context_map = {path: repo_context} if repo_context else None
+    return scan_paths([path], common_config=common_config, infer=infer, repo_contexts=context_map)
 
 
-def _scan_single_path(path: Path, normalized_config: Dict[str, str]) -> List[LineageEdge]:
+def _scan_single_path(
+    path: Path,
+    normalized_config: Dict[str, str],
+    repo_context: Optional[RepoContext] = None,
+) -> List[LineageEdge]:
     files = _gather_files(path)
     base_dir = path if path.is_dir() else path.parent
 
@@ -49,6 +83,10 @@ def _scan_single_path(path: Path, normalized_config: Dict[str, str]) -> List[Lin
     for file_path in files:
         statements = extract_statements_from_file(file_path, normalized_config)
         rel_path = _relative_path(file_path, base_dir)
+        if repo_context:
+            url = repo_context.file_url(file_path)
+            if url:
+                rel_path = url
         for statement in statements:
             edges.extend(
                 parse_sql_lineage(
@@ -155,4 +193,4 @@ def _apply_label_override(value: Optional[str], overrides: Dict[str, str]) -> Op
     return result
 
 
-__all__ = ["scan_path", "scan_paths", "write_lineage", "LineageEdge"]
+__all__ = ["scan_path", "scan_paths", "write_lineage", "LineageEdge", "RepoContext"]
