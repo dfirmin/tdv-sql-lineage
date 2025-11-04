@@ -1,0 +1,7 @@
+patterns:
+  - path: ["ccw", "Statement"]
+    arg_index: 0
+    arg_name: statement
+  - path: ["Statement"]
+    arg_index: 0
+    arg_name: statement

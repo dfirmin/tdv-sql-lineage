@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 from .extractor.ast_extractor import extract_statements_from_file
+from .extractor.patterns import CallPattern, DEFAULT_PATTERNS
 from .parser.sql_parser import LineageEdge, parse_sql_lineage
 
 
@@ -31,6 +32,7 @@ def scan_paths(
     common_config: Optional[Dict[str, object]] = None,
     infer: bool = False,
     repo_contexts: Optional[Dict[Path, RepoContext]] = None,
+    patterns: Optional[Sequence[CallPattern]] = None,
 ) -> List[LineageEdge]:
     """Scan *paths* (files or directories) and return lineage edges."""
 
@@ -45,11 +47,12 @@ def scan_paths(
             resolved_map[key.resolve()] = value
         except OSError:
             pass
+    active_patterns: Sequence[CallPattern] = patterns or DEFAULT_PATTERNS
     for path in paths:
         context = resolved_map.get(path)
         if context is None:
             context = resolved_map.get(path.resolve())
-        edges.extend(_scan_single_path(path, normalized_config, context))
+        edges.extend(_scan_single_path(path, normalized_config, context, active_patterns))
 
     deduped = _deduplicate_edges(edges)
     if infer:
@@ -65,24 +68,36 @@ def scan_path(
     common_config: Optional[Dict[str, object]] = None,
     infer: bool = False,
     repo_context: Optional[RepoContext] = None,
+    patterns: Optional[Sequence[CallPattern]] = None,
 ) -> List[LineageEdge]:
     """Scan a single *path* for Python files and return lineage edges."""
 
     context_map = {path: repo_context} if repo_context else None
-    return scan_paths([path], common_config=common_config, infer=infer, repo_contexts=context_map)
+    return scan_paths(
+        [path],
+        common_config=common_config,
+        infer=infer,
+        repo_contexts=context_map,
+        patterns=patterns,
+    )
 
 
 def _scan_single_path(
     path: Path,
     normalized_config: Dict[str, str],
-    repo_context: Optional[RepoContext] = None,
+    repo_context: Optional[RepoContext],
+    patterns: Sequence[CallPattern],
 ) -> List[LineageEdge]:
     files = _gather_files(path)
     base_dir = path if path.is_dir() else path.parent
 
     edges: List[LineageEdge] = []
     for file_path in files:
-        statements = extract_statements_from_file(file_path, normalized_config)
+        statements = extract_statements_from_file(
+            file_path,
+            normalized_config,
+            patterns=patterns,
+        )
         rel_path = _relative_path(file_path, base_dir)
         if repo_context:
             url = repo_context.file_url(file_path)

@@ -3,9 +3,9 @@ from __future__ import annotations
 import ast
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Sequence, Tuple
 
-from .patterns import SQL_CALL_PATTERNS, CallPattern
+from .patterns import DEFAULT_PATTERNS, CallPattern
 
 @dataclass
 class ExtractedStatement:
@@ -21,7 +21,12 @@ class ExtractedStatement:
 class StatementExtractor(ast.NodeVisitor):
     """AST visitor that locates ccw.Statement calls and reconstructs SQL text."""
 
-    def __init__(self, file_path: Path, common_config: Optional[Dict[str, object]] = None) -> None:
+    def __init__(
+        self,
+        file_path: Path,
+        common_config: Optional[Dict[str, object]] = None,
+        patterns: Optional[Sequence[CallPattern]] = None,
+    ) -> None:
         self.file_path = file_path
         self.common_config: Dict[str, str] = {
             key: str(value) for key, value in (common_config or {}).items()
@@ -30,6 +35,7 @@ class StatementExtractor(ast.NodeVisitor):
         self._function_stack: List[str] = []
         self._function_defs: Dict[str, ast.FunctionDef] = {}
         self._function_call_stack: List[str] = []
+        self._patterns: Sequence[CallPattern] = patterns or DEFAULT_PATTERNS
 
     # ------------------------------------------------------------------
     # Visitor methods
@@ -68,7 +74,7 @@ class StatementExtractor(ast.NodeVisitor):
     # ------------------------------------------------------------------
     def _match_sql_call(self, node: ast.Call) -> Optional[Tuple[CallPattern, ast.AST]]:
         call_path = self._call_path(node.func)
-        for pattern in SQL_CALL_PATTERNS:
+        for pattern in self._patterns:
             if pattern.matches(call_path):
                 argument = pattern.extract_argument(node)
                 if argument is not None:
@@ -217,12 +223,18 @@ class StatementExtractor(ast.NodeVisitor):
 
 
 def extract_statements_from_file(
-    file_path: Path, common_config: Optional[Dict[str, object]] = None
+    file_path: Path,
+    common_config: Optional[Dict[str, object]] = None,
+    patterns: Optional[Sequence[CallPattern]] = None,
 ) -> List[ExtractedStatement]:
     """Parse *file_path* and return discovered SQL statements."""
 
     source = file_path.read_text(encoding="utf-8")
     tree = ast.parse(source, filename=str(file_path))
-    extractor = StatementExtractor(file_path=file_path, common_config=common_config)
+    extractor = StatementExtractor(
+        file_path=file_path,
+        common_config=common_config,
+        patterns=patterns,
+    )
     extractor.visit(tree)
     return extractor.statements

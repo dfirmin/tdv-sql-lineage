@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional, Sequence, Tuple
+from typing import Iterable, List, Optional, Sequence, Tuple
 
 import ast
 
@@ -27,10 +27,51 @@ class CallPattern:
         return None
 
 
-SQL_CALL_PATTERNS: Sequence[CallPattern] = (
-    # Fully-qualified ccw.Statement(...)
+DEFAULT_PATTERNS: Sequence[CallPattern] = (
     CallPattern(path=("ccw", "Statement"), arg_index=0, arg_name="statement"),
-    # Direct Statement(...) calls (e.g., from ccw import Statement)
     CallPattern(path=("Statement",), arg_index=0, arg_name="statement"),
 )
+
+
+def load_patterns_from_specs(specs: Optional[Iterable[dict]]) -> Sequence[CallPattern]:
+    patterns: List[CallPattern] = list(DEFAULT_PATTERNS)
+    if not specs:
+        return patterns
+
+    for spec in specs:
+        if not isinstance(spec, dict):
+            continue
+        path_value = spec.get("path")
+        if not path_value:
+            continue
+        if isinstance(path_value, str):
+            path = tuple(path_value.split("."))
+        elif isinstance(path_value, (list, tuple)):
+            path = tuple(str(part) for part in path_value)
+        else:
+            continue
+
+        arg_index = spec.get("arg_index")
+        arg_name = spec.get("arg_name")
+
+        normalized_index: Optional[int]
+        if arg_index is None:
+            normalized_index = None
+        elif isinstance(arg_index, int):
+            normalized_index = arg_index
+        elif isinstance(arg_index, str) and arg_index.isdigit():
+            normalized_index = int(arg_index)
+        else:
+            normalized_index = 0
+
+        normalized_name = str(arg_name) if arg_name is not None else None
+
+        patterns.append(
+            CallPattern(
+                path=path,
+                arg_index=normalized_index,
+                arg_name=normalized_name,
+            )
+        )
+    return patterns
 
