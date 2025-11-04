@@ -2,10 +2,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import subprocess
+import tempfile
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple
+from typing import Any, Dict, Optional, Tuple, List
 
-from .analyzer import scan_paths, write_lineage
+from .analyzer import RepoContext, scan_paths, write_lineage
 
 
 def main(argv: Optional[list[str]] = None) -> None:
@@ -21,18 +24,62 @@ def main(argv: Optional[list[str]] = None) -> None:
         target_strings.append(args.path)
     if args.file:
         target_strings.extend(args.file)
-    if not target_strings:
+    if not target_strings and not args.repo:
         parser.error("provide either a project path or at least one --file")
 
     target_paths = [Path(item) for item in target_strings]
+    repo_context_map: Dict[Path, RepoContext] = {}
     common_config: Dict[str, Any] = {}
     label_overrides: Dict[str, str] = {}
     if args.config:
         common_config, label_overrides = _load_scan_config(args.config)
 
-    edges = scan_paths(target_paths, common_config=common_config, infer=args.infer)
-    output_path = Path(args.output)
-    write_lineage(edges, output_path, label_overrides=label_overrides)
+    repo_tempdir: Optional[tempfile.TemporaryDirectory] = None
+    try:
+        if args.repo:
+            repo_tempdir = tempfile.TemporaryDirectory()
+            (
+                repo_paths,
+                repo_base_url,
+                repo_root,
+                _repo_subpath,
+            ) = _materialize_repo(
+                args.repo,
+                destination=Path(repo_tempdir.name),
+                ref_override=args.ref,
+                subpath_override=args.repo_subpath,
+            )
+            target_paths.extend(repo_paths)
+            effective_ref = args.ref
+            if effective_ref is None:
+                _, parsed_ref, _ = _parse_repo_arg(args.repo)
+                effective_ref = parsed_ref
+            repo_context = RepoContext(
+                base_url=repo_base_url,
+                ref=effective_ref,
+                root=repo_root,
+            )
+            for repo_path in repo_paths:
+                repo_context_map[repo_path] = repo_context
+                try:
+                    repo_context_map[repo_path.resolve()] = repo_context
+                except OSError:
+                    pass
+
+        if not target_paths:
+            parser.error("provide a local path/--file or specify --repo")
+
+        edges = scan_paths(
+            target_paths,
+            common_config=common_config,
+            infer=args.infer,
+            repo_contexts=repo_context_map,
+        )
+        output_path = Path(args.output)
+        write_lineage(edges, output_path, label_overrides=label_overrides)
+    finally:
+        if repo_tempdir is not None:
+            repo_tempdir.cleanup()
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -60,6 +107,18 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     scan_parser.add_argument(
         "--infer", action="store_true", help="Infer multi-hop lineage through volatile tables"
+    )
+    scan_parser.add_argument(
+        "--repo",
+        help="Remote Git repository to scan (HTTPS URL). Supports GitHub '.../tree/<ref>/<path>' URLs.",
+    )
+    scan_parser.add_argument(
+        "--ref",
+        help="Repository ref (branch, tag, or commit) to checkout when using --repo. Overrides refs embedded in the URL.",
+    )
+    scan_parser.add_argument(
+        "--repo-subpath",
+        help="Optional subdirectory inside the cloned repository to scan (e.g. 'test').",
     )
     return parser
 
@@ -90,6 +149,56 @@ def _load_scan_config(config_path: str) -> Tuple[Dict[str, Any], Dict[str, str]]
 
     normalized_common = {key: str(value) for key, value in common_config.items()}
     return normalized_common, label_overrides
+
+
+def _materialize_repo(
+    repo_arg: str,
+    *,
+    destination: Path,
+    ref_override: Optional[str],
+    subpath_override: Optional[str],
+) -> Tuple[List[Path], str, Path, Optional[str]]:
+    repo_url, parsed_ref, parsed_subpath = _parse_repo_arg(repo_arg)
+    effective_ref = ref_override or parsed_ref
+    effective_subpath = subpath_override or parsed_subpath
+
+    clone_dir = destination / "repo"
+    clone_cmd = ["git", "clone", "--depth", "1"]
+    if effective_ref:
+        clone_cmd.extend(["--branch", effective_ref])
+    clone_cmd.extend([repo_url, str(clone_dir)])
+
+    result = subprocess.run(
+        clone_cmd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"git clone failed (exit code {result.returncode}):\n{result.stderr.strip()}"
+        )
+
+    target = clone_dir / effective_subpath if effective_subpath else clone_dir
+    if not target.exists():
+        raise ValueError(
+            f"Subpath '{effective_subpath}' not found in cloned repository" if effective_subpath else "Cloned repository path does not exist"
+        )
+    return [target], repo_url, clone_dir, effective_subpath
+
+
+GITHUB_TREE_PATTERN = re.compile(
+    r"^(https://github\.com/[^/]+/[^/]+)(?:/tree/([^/]+)(?:/(.*))?)?$"
+)
+
+
+def _parse_repo_arg(repo_arg: str) -> Tuple[str, Optional[str], Optional[str]]:
+    matched = GITHUB_TREE_PATTERN.match(repo_arg)
+    if matched:
+        base_url, ref, subpath = matched.groups()
+        return base_url, ref, subpath
+    return repo_arg, None, None
 
 
 __all__ = ["main"]

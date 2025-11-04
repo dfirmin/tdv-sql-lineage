@@ -57,6 +57,9 @@ python -m lineage scan PATH/TO/PROJECT \
 
 - `--output`: Output file for lineage results (default `lineage.json`).
 - `--infer`: Enable inference of indirect lineage through volatile tables.
+- `--repo`: Clone a remote repository (HTTPS URL) into a temporary directory and scan it.
+- `--ref`: Optional branch, tag, or commit to check out when using `--repo`.
+- `--repo-subpath`: Optional subdirectory within the cloned repository to scan (defaults to the repo root or the path parsed from a GitHub `.../tree/<ref>/<path>` URL).
 
 ### Example Commands
 
@@ -85,6 +88,14 @@ uv run -m lineage scan src/etl --file scripts/extra_job.py \
   --output lineage.json
 ```
 
+Scan a remote GitHub directory (branch `main`, subfolder `test` inferred from the URL):
+
+```bash
+uv run -m lineage scan --repo https://github.com/dfirmin/tdv-sql-lineage/tree/main/test \
+  --config config_labels.json \
+  --output test/output/from_repo.json
+```
+
 The generated JSON is a list of objects:
 
 ```json
@@ -97,7 +108,7 @@ The generated JSON is a list of objects:
     "function": "vt_src_cd_val_xwalk",
     "source_column": "SRC_CDSET_NM",
     "target_column": "SRC_CDSET_NM",
-    "mapping_rule": "DIRECT_MOVE"
+"mapping_rule": "DIRECT_MOVE"
   }
 ]
 ```
@@ -105,6 +116,7 @@ The generated JSON is a list of objects:
 - `source_table` / `target_table`: Table-level lineage.
 - `temp`: `true` when the target came from a `CREATE VOLATILE TABLE` (useful for identifying session-scoped tables), otherwise `false`.
 - `source_column` / `target_column`: Column lineage when available.
+- `file`: Source location. Relative path for local scans, or a GitHub `blob/<ref>/...` URL when `--repo` is used.
 - `mapping_rule`: Either `DIRECT_MOVE` (the target column is a direct passthrough of the source column, e.g., `COALESCE(src.col, ' ')`) or `TRANSFORMATION` for derived values (hashes, concatenations, CASE expressions, multi-column expressions, constants, etc.). Missing `source_column` entries indicate that the tool could not resolve the exact input (for example, `DELETE FROM` without sources).
 
 ## Development

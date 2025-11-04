@@ -1,0 +1,1373 @@
+[
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "BASE",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "upd_base_src_cd_xwalk_one",
+    "source_column": "XWALK_END_DT",
+    "target_column": "XWALK_END_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "target_column": "CURR_IND",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "target_column": "INS_FLAG",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "target_column": "UPD_FLAG",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "REF_CLOSEST_DAY",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CONFRM_CD_VAL_KEY",
+    "target_column": "TGT_CONFRM_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "REF_CLOSEST_DAY",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "SRC_CD_VAL_KEY",
+    "target_column": "TGT_SRC_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "REF_CLOSEST_DAY",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CHK_SUM_TXT",
+    "target_column": "TGT_CHK_SUM_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "REF_CLOSEST_DAY",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "MIN_XWALK_BEG_DT",
+    "target_column": "TGT_XWALK_BEG_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CONFRM_CD_VAL_KEY",
+    "target_column": "CONFRM_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "SRC_CD_VAL_KEY",
+    "target_column": "SRC_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CHNL_SRC_CD",
+    "target_column": "CHNL_SRC_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CONFRM_CDSET_CHNL_SRC_CD",
+    "target_column": "CONFRM_CDSET_CHNL_SRC_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CHK_SUM_TXT",
+    "target_column": "CHK_SUM_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "LOAD_CTL_KEY",
+    "target_column": "LOAD_CTL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CONFRM_CDSET_NM",
+    "target_column": "CONFRM_CDSET_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CONFRM_CD_VAL_TXT",
+    "target_column": "CONFRM_CD_VAL_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "SRC_CDSET_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "SRC_CD_VAL_TXT",
+    "target_column": "SRC_CD_VAL_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "XWALK_ROW_ID",
+    "target_column": "XWALK_ROW_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "XWALK_UNQ_NM",
+    "target_column": "XWALK_UNQ_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CONFRM_CDSET_KEY",
+    "target_column": "CONFRM_CDSET_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "SRC_CDSET_KEY",
+    "target_column": "SRC_CDSET_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CONFRM_CDSET_UNQ_ID",
+    "target_column": "CONFRM_CDSET_UNQ_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "SRC_CDSET_UNQ_ID",
+    "target_column": "SRC_CDSET_UNQ_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "XWALK_BEG_DT",
+    "target_column": "XWALK_BEG_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "XWALK_END_DT",
+    "target_column": "XWALK_END_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "XWALK_BEG_DT",
+    "target_column": "UPD_END_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "XWALK_END_DT",
+    "target_column": "UPD_END_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "EFF_DT",
+    "target_column": "EFF_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "TERM_DT",
+    "target_column": "TERM_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "vt_base_src_cd_xwalk",
+    "source_column": "CHNL_CD",
+    "target_column": "CHNL_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "VT_BASE_SRC_CD_XWALK_U",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "cvt_base_src_cd_xwalk_u",
+    "target_column": "column_3",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "VT_BASE_SRC_CD_XWALK_U",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "cvt_base_src_cd_xwalk_u",
+    "target_column": "N",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK_U",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "cvt_base_src_cd_xwalk_u",
+    "source_column": "TGT_CONFRM_CD_VAL_KEY",
+    "target_column": "TGT_CONFRM_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK_U",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "cvt_base_src_cd_xwalk_u",
+    "source_column": "SRC_CD_VAL_KEY",
+    "target_column": "SRC_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK_U",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "cvt_base_src_cd_xwalk_u",
+    "source_column": "LOAD_CTL_KEY",
+    "target_column": "LOAD_CTL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK_U",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "cvt_base_src_cd_xwalk_u",
+    "source_column": "TGT_XWALK_BEG_DT",
+    "target_column": "TGT_XWALK_BEG_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "VT_BASE_SRC_CD_XWALK_U",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "cvt_base_src_cd_xwalk_u",
+    "source_column": "UPD_END_DT",
+    "target_column": "UPD_END_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "target_column": "CHK_SUM_TXT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "CDSET_UNQ_NM",
+    "target_column": "CDSET_UNQ_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "XWALK_ROW_ID",
+    "target_column": "XWALK_ROW_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_DOMAIN_NM",
+    "target_column": "SRC_DOMAIN_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_DOMAIN_NM",
+    "target_column": "TGT_SRC_DOMAIN_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "SRC_CDSET_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "CD_VAL_TXT",
+    "target_column": "CD_VAL_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "XWALK_BEG_DT",
+    "target_column": "XWALK_BEG_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "XWALK_END_DT",
+    "target_column": "XWALK_END_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "LOAD_CTL_KEY",
+    "target_column": "LOAD_CTL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "CD_VAL_TXT",
+    "target_column": "SRC_CD_VAL_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_DOMAIN_NM",
+    "target_column": "SRC_CD_VAL_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "SRC_CD_VAL_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "SRC_CDSET_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_DOMAIN_NM",
+    "target_column": "SRC_CDSET_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "CD_VAL_TXT",
+    "target_column": "CONFRM_CD_VAL_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_DOMAIN_NM",
+    "target_column": "CONFRM_CD_VAL_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "CONFRM_CD_VAL_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "CONFRM_CDSET_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "CD_VAL_TXT",
+    "target_column": "CONFRM_CD_VAL_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "CONFRM_CDSET_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_DOMAIN_NM",
+    "target_column": "CONFRM_CDSET_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "CONFRM_CDSET_ATTRIB_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_DOMAIN_NM",
+    "target_column": "CONFRM_CDSET_ATTRIB_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "{{common_config.load_ctl_key}}",
+    "target_column": "TRGT_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "CDSET_UNQ_NM",
+    "target_column": "TRGT_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "XWALK_ROW_ID",
+    "target_column": "TRGT_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_DOMAIN_NM",
+    "target_column": "TRGT_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "TRGT_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "CD_VAL_TXT",
+    "target_column": "TRGT_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "XWALK_BEG_DT",
+    "target_column": "TRGT_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_LZ.CCW_CDSET_XWALK",
+    "target_table": "vt_src_cd_val_xwalk",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_src_cd_val_xwalk",
+    "source_column": "XWALK_END_DT",
+    "target_column": "TRGT_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_BASE.REF_CDSET",
+    "target_table": "vt_xwalk_ri_ref_attrib",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_xwalk_ri_ref_attrib",
+    "source_column": "CDSET_NM",
+    "target_column": "CDSET_ATTRIB_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_BASE.REF_CDSET",
+    "target_table": "vt_xwalk_ri_ref_attrib",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_xwalk_ri_ref_attrib",
+    "source_column": "CDSET_UNQ_ID",
+    "target_column": "CDSET_UNQ_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_BASE.REF_CDSET",
+    "target_table": "vt_xwalk_ri_ref_attrib",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_xwalk_ri_ref_attrib",
+    "source_column": "CHNL_SRC_CD",
+    "target_column": "CHNL_SRC_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_BASE.REF_CD_ATTRIB",
+    "target_table": "vt_xwalk_ri_ref_attrib",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_xwalk_ri_ref_attrib",
+    "source_column": "CHNL_SRC_CD",
+    "target_column": "CDSET_ATTRIB_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_BASE.REF_CD_ATTRIB",
+    "target_table": "vt_xwalk_ri_ref_attrib",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_xwalk_ri_ref_attrib",
+    "source_column": "ATTRIB_NM",
+    "target_column": "CDSET_ATTRIB_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_BASE.REF_CD_VAL",
+    "target_table": "vt_xwalk_ri_ref_attrib",
+    "temp": true,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "vt_xwalk_ri_ref_attrib",
+    "source_column": "REF_CDSET_KEY",
+    "target_column": "REF_CDSET_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "target_column": "CRET_TS",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "target_column": "UPDT_TS",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "upd_base_src_cd_xwalk_two",
+    "target_column": "CURR_RCD_IND",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "upd_base_src_cd_xwalk_two",
+    "target_column": "TERM_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CONFRM_CD_VAL_KEY",
+    "target_column": "CONFRM_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "SRC_CD_VAL_KEY",
+    "target_column": "SRC_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CHNL_SRC_CD",
+    "target_column": "CHNL_SRC_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CONFRM_CDSET_CHNL_SRC_CD",
+    "target_column": "CONFRM_CDSET_CHNL_SRC_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CURR_RCD_IND",
+    "target_column": "CURR_RCD_IND",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CHK_SUM_TXT",
+    "target_column": "CHK_SUM_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "LOAD_CTL_KEY",
+    "target_column": "LOAD_CTL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CONFRM_CDSET_NM",
+    "target_column": "CONFRM_CDSET_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CONFRM_CD_VAL_TXT",
+    "target_column": "CONFRM_CD_VAL_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "SRC_CDSET_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "SRC_CD_VAL_TXT",
+    "target_column": "SRC_CD_VAL_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "XWALK_ROW_ID",
+    "target_column": "XWALK_ROW_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "XWALK_UNQ_NM",
+    "target_column": "XWALK_UNQ_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CONFRM_CDSET_KEY",
+    "target_column": "CONFRM_CDSET_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "SRC_CDSET_KEY",
+    "target_column": "SRC_CDSET_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CONFRM_CDSET_UNQ_ID",
+    "target_column": "CONFRM_CDSET_UNQ_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "SRC_CDSET_UNQ_ID",
+    "target_column": "SRC_CDSET_UNQ_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "XWALK_BEG_DT",
+    "target_column": "XWALK_BEG_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "XWALK_END_DT",
+    "target_column": "XWALK_END_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "EFF_DT",
+    "target_column": "EFF_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "TERM_DT",
+    "target_column": "TERM_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "ins_base_src_cd_xwalk",
+    "source_column": "CHNL_CD",
+    "target_column": "CHNL_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "VT_BASE_SRC_CD_XWALK_U",
+    "target_table": "CCW_BASE.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_2.py",
+    "function": "upd_base_src_cd_xwalk_u"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_AUD.CCW_DATA_QUAL",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_aud_tbl",
+    "target_column": "PROJ_NM",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_AUD.CCW_DATA_QUAL",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_aud_tbl",
+    "target_column": "TRGT_SCHEMA_NM",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_AUD.CCW_DATA_QUAL",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_aud_tbl",
+    "target_column": "TRGT_TBLNM",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_AUD.CCW_DATA_QUAL",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_aud_tbl",
+    "target_column": "TRGT_COLMN_NM",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_AUD.CCW_DATA_QUAL",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_aud_tbl",
+    "target_column": "CRET_TIMESTMP",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_AUD.CCW_DATA_QUAL",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_aud_tbl",
+    "target_column": "SRC_DATA_TXT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_AUD.CCW_DATA_QUAL",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_aud_tbl",
+    "target_column": "ERR_MSG_DESC",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_AUD.CCW_DATA_QUAL",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_aud_tbl",
+    "source_column": "TRGT_KEY",
+    "target_column": "TRGT_TBL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_AUD.CCW_DATA_QUAL",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_aud_tbl",
+    "source_column": "LOAD_CTL_KEY",
+    "target_column": "LOAD_CTL_KEY",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "trunc_src_cd_val_xwalk"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "target_column": "CRET_TS",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "target_column": "UPDT_TS",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "target_column": "CURR_RCD_IND",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "target_column": "EFF_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "target_column": "TERM_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "target_column": "CHNL_CD",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CONFRM_CD_VAL_KEY",
+    "target_column": "CONFRM_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "SRC_CD_VAL_KEY",
+    "target_column": "SRC_CD_VAL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "SRC_DOMAIN_NM",
+    "target_column": "CHNL_SRC_CD",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "TGT_SRC_DOMAIN_NM",
+    "target_column": "CONFRM_CDSET_CHNL_SRC_CD",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CHK_SUM_TXT",
+    "target_column": "CHK_SUM_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "LOAD_CTL_KEY",
+    "target_column": "LOAD_CTL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CONFRM_CDSET_NM",
+    "target_column": "CONFRM_CDSET_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CONFRM_CD_VAL_TXT",
+    "target_column": "CONFRM_CD_VAL_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "SRC_CDSET_NM",
+    "target_column": "SRC_CDSET_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CD_VAL_TXT",
+    "target_column": "SRC_CD_VAL_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "XWALK_ROW_ID",
+    "target_column": "XWALK_ROW_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CDSET_UNQ_NM",
+    "target_column": "XWALK_UNQ_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CONFRM_CDSET_KEY",
+    "target_column": "CONFRM_CDSET_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "SRC_CDSET_KEY",
+    "target_column": "SRC_CDSET_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "XWALK_BEG_DT",
+    "target_column": "XWALK_BEG_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "vt_src_cd_val_xwalk",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "XWALK_END_DT",
+    "target_column": "XWALK_END_DT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "vt_xwalk_ri_ref_attrib",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CDSET_UNQ_ID",
+    "target_column": "CONFRM_CDSET_UNQ_ID",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_BASE.REF_CDSET",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CDSET_UNQ_ID",
+    "target_column": "CONFRM_CDSET_UNQ_ID",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_BASE.REF_CDSET",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "insert_src_cd_val_xwalk_stg_tbl",
+    "source_column": "CDSET_UNQ_ID",
+    "target_column": "SRC_CDSET_UNQ_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "post_sql_execution",
+    "source_column": "XWALK_ROW_ID",
+    "target_column": "CHK_SUM_TXT",
+    "mapping_rule": "TRANSFORMATION"
+  },
+  {
+    "source_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "target_table": "CCW_STG.SRC_CD_VAL_XWALK",
+    "temp": false,
+    "file": "https://github.com/dfirmin/tdv-sql-lineage/blob/main/test/test_1.py",
+    "function": "post_sql_execution",
+    "source_column": "XWALK_UNQ_NM",
+    "target_column": "CHK_SUM_TXT",
+    "mapping_rule": "TRANSFORMATION"
+  }
+]

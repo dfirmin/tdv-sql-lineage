@@ -4,7 +4,7 @@ This document explains how the `tdv-sql-lineage` codebase discovers lineage in P
 
 ## High-Level Flow
 
-1. **Entry point** — The `lineage.cli` module exposes the `lineage scan` command (`python -m lineage scan …`). It normalises input arguments, loads optional configuration (both `common_config` substitutions and `label_overrides`), and calls the analyzer.
+1. **Entry point** — The `lineage.cli` module exposes the `lineage scan` command (`python -m lineage scan …`). It normalises input arguments, optionally clones remote repositories (`--repo`), loads configuration (both `common_config` substitutions and `label_overrides`), and calls the analyzer.
 2. **Analyzer** — `lineage.analyzer` coordinates the scan:
    - Recursively discovers Python files or uses explicit `--file` targets.
    - Passes each file to the AST extractor to recover SQL statements embedded in `ccw.Statement` calls.
@@ -25,6 +25,7 @@ Thin wrapper that calls `cli.main()` when the package is executed via `python -m
 - Loads configuration files. Supports a mixed payload:
   - `common_config`: key/value pairs used by the AST extractor when it encounters `common_config['key']`.
   - `label_overrides` (or `output_labels`): string replacements applied to table names before writing JSON.
+- Optionally clones remote Git repositories (`--repo`, `--ref`, `--repo-subpath`) into a temporary directory before scanning.
 - Validates user input, combines `--path` and repeated `--file` arguments, and calls `scan_paths`.
 - Writes results via `write_lineage`, forwarding any label overrides so output tables can be aliased.
 
@@ -35,6 +36,7 @@ Thin wrapper that calls `cli.main()` when the package is executed via `python -m
   - Parse SQL into `LineageEdge` objects.
   - Deduplicate edges while retaining file/function metadata.
   - Optionally infer multi-hop lineage through volatile tables (`--infer`).
+  - If a `RepoContext` is provided (via `--repo`), record GitHub `blob/<ref>/...` URLs instead of local file names so the JSON can deep-link into the remote repository.
 - `write_lineage` serialises edges to JSON, applying label overrides and preserving new keys:
   - `source_table`, `target_table`
   - `temp` (volatile flag)
