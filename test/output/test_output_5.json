@@ -6,7 +6,7 @@
     "file": "test_5.py"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -15,7 +15,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -24,7 +24,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -33,7 +33,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -42,7 +42,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -51,7 +51,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -60,7 +60,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -69,7 +69,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -78,7 +78,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -87,7 +87,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -96,7 +96,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -105,7 +105,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -114,7 +114,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -123,7 +123,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -132,7 +132,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -141,7 +141,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -150,7 +150,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -159,7 +159,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -168,7 +168,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -177,7 +177,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -186,7 +186,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -195,7 +195,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -204,7 +204,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -213,7 +213,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -222,7 +222,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -231,7 +231,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -240,7 +240,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -249,7 +249,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -258,7 +258,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -267,7 +267,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -276,7 +276,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -285,7 +285,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -294,7 +294,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -303,7 +303,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -312,7 +312,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -321,7 +321,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -330,7 +330,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -339,7 +339,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -348,7 +348,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -357,7 +357,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -366,7 +366,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -375,7 +375,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -384,7 +384,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -393,7 +393,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -402,7 +402,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -411,7 +411,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -420,7 +420,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -429,7 +429,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -438,7 +438,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -447,7 +447,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -456,7 +456,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -465,7 +465,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -474,7 +474,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -483,7 +483,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -492,7 +492,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -501,7 +501,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -510,7 +510,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -519,7 +519,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -528,7 +528,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -537,7 +537,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -546,7 +546,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -555,7 +555,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -564,7 +564,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -573,7 +573,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -582,7 +582,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -591,7 +591,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -600,7 +600,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -609,7 +609,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -618,7 +618,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -627,7 +627,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -636,7 +636,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -645,7 +645,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -654,7 +654,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -663,7 +663,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -672,7 +672,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -681,7 +681,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -690,7 +690,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -699,7 +699,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -708,7 +708,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -717,7 +717,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -726,7 +726,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -735,7 +735,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -744,7 +744,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -753,7 +753,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -762,7 +762,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -771,7 +771,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -780,7 +780,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -789,7 +789,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -798,7 +798,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -807,7 +807,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -816,7 +816,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -825,7 +825,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -834,7 +834,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -843,7 +843,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -852,7 +852,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -861,7 +861,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -870,7 +870,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -879,7 +879,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -888,7 +888,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -897,7 +897,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -906,7 +906,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -915,7 +915,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -924,7 +924,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -933,7 +933,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -942,7 +942,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -951,7 +951,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -960,7 +960,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -969,7 +969,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -978,7 +978,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -987,7 +987,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -996,7 +996,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1005,7 +1005,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1014,7 +1014,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1023,7 +1023,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1032,7 +1032,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1041,7 +1041,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1050,7 +1050,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1059,7 +1059,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1068,7 +1068,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1077,7 +1077,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1086,7 +1086,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1095,7 +1095,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1104,7 +1104,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1113,7 +1113,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1122,7 +1122,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1131,7 +1131,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1140,7 +1140,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1149,7 +1149,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1158,7 +1158,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1167,7 +1167,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1176,7 +1176,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1185,7 +1185,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1194,7 +1194,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1203,7 +1203,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",
@@ -1212,7 +1212,7 @@
     "mapping_rule": "DIRECT_MOVE"
   },
   {
-    "source_table": "CCW_STG.{{tbl_nm}}",
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
     "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
     "temp": false,
     "file": "test_5.py",

@@ -123,6 +123,8 @@ class StatementExtractor(ast.NodeVisitor):
         if isinstance(node, ast.Name):
             if local_env and node.id in local_env:
                 return local_env[node.id]
+            if node.id in self._template_vars:
+                return self._template_vars[node.id]
             return self._placeholder(node.id)
         if isinstance(node, ast.Attribute):
             return self._placeholder(self._attribute_name(node))
