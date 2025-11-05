@@ -3,6 +3,7 @@ from __future__ import annotations
 import ast
 from dataclasses import dataclass
 from pathlib import Path
+import re
 from typing import Dict, List, Optional, Sequence, Tuple
 
 from .patterns import DEFAULT_PATTERNS, CallPattern
@@ -21,11 +22,14 @@ class ExtractedStatement:
 class StatementExtractor(ast.NodeVisitor):
     """AST visitor that locates ccw.Statement calls and reconstructs SQL text."""
 
+    TEMPLATE_PATTERN = re.compile(r"\$\{([^}]+)\}")
+
     def __init__(
         self,
         file_path: Path,
         common_config: Optional[Dict[str, object]] = None,
         patterns: Optional[Sequence[CallPattern]] = None,
+        template_variables: Optional[Dict[str, str]] = None,
     ) -> None:
         self.file_path = file_path
         self.common_config: Dict[str, str] = {
@@ -36,6 +40,9 @@ class StatementExtractor(ast.NodeVisitor):
         self._function_defs: Dict[str, ast.FunctionDef] = {}
         self._function_call_stack: List[str] = []
         self._patterns: Sequence[CallPattern] = patterns or DEFAULT_PATTERNS
+        self._template_vars: Dict[str, str] = {
+            key: str(value) for key, value in (template_variables or {}).items()
+        }
 
     # ------------------------------------------------------------------
     # Visitor methods
@@ -58,6 +65,7 @@ class StatementExtractor(ast.NodeVisitor):
             pattern, target_node = match
             sql_text = self._resolve_node(target_node)
             if sql_text:
+                sql_text = self._apply_template_variables(sql_text)
                 self.statements.append(
                     ExtractedStatement(
                         sql=sql_text,
@@ -115,6 +123,8 @@ class StatementExtractor(ast.NodeVisitor):
         if isinstance(node, ast.Name):
             if local_env and node.id in local_env:
                 return local_env[node.id]
+            if node.id in self._template_vars:
+                return self._template_vars[node.id]
             return self._placeholder(node.id)
         if isinstance(node, ast.Attribute):
             return self._placeholder(self._attribute_name(node))
@@ -188,6 +198,15 @@ class StatementExtractor(ast.NodeVisitor):
     def _placeholder(name: str) -> str:
         return f"{{{{{name}}}}}"
 
+    def _apply_template_variables(self, sql: str) -> str:
+        def repl(match: re.Match[str]) -> str:
+            key = match.group(1)
+            if key in self._template_vars:
+                return self._template_vars[key]
+            return f"{{{{template.{key}}}}}"
+
+        return self.TEMPLATE_PATTERN.sub(repl, sql)
+
     def _resolve_user_function_call(
         self,
         name: str,
@@ -226,6 +245,7 @@ def extract_statements_from_file(
     file_path: Path,
     common_config: Optional[Dict[str, object]] = None,
     patterns: Optional[Sequence[CallPattern]] = None,
+    template_variables: Optional[Dict[str, str]] = None,
 ) -> List[ExtractedStatement]:
     """Parse *file_path* and return discovered SQL statements."""
 
@@ -235,6 +255,7 @@ def extract_statements_from_file(
         file_path=file_path,
         common_config=common_config,
         patterns=patterns,
+        template_variables=template_variables,
     )
     extractor.visit(tree)
     return extractor.statements

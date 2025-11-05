@@ -1,0 +1,1223 @@
+[
+  {
+    "source_table": "<unknown>",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CLNCL_CASE_KEY",
+    "target_column": "CLNCL_CASE_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "LOAD_CTL_KEY",
+    "target_column": "LOAD_CTL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CRET_TS",
+    "target_column": "CRET_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CHNL_CD",
+    "target_column": "CHNL_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CHNL_SRC_CD",
+    "target_column": "CHNL_SRC_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_ID",
+    "target_column": "CASE_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CSM_ID",
+    "target_column": "CSM_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CLNCL_TY_CD",
+    "target_column": "CLNCL_TY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CLNCL_CASE_MAST_KEY",
+    "target_column": "CLNCL_CASE_MAST_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CUST_ELGBTY_ACCT_KEY",
+    "target_column": "CUST_ELGBTY_ACCT_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CLIENT_ID",
+    "target_column": "CLIENT_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CLIENT_NM",
+    "target_column": "CLIENT_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CLIENT_ACCT_NUM",
+    "target_column": "CLIENT_ACCT_NUM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CLIENT_ACCT_NM",
+    "target_column": "CLIENT_ACCT_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "ACCT_TY_CD",
+    "target_column": "ACCT_TY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "ACCT_SUBTY_CD",
+    "target_column": "ACCT_SUBTY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PRODT_TY_CD",
+    "target_column": "PRODT_TY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "BEN_PLAN_NUM",
+    "target_column": "BEN_PLAN_NUM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "BEN_CLSS_NUM",
+    "target_column": "BEN_CLSS_NUM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "ENTPR_CUST_ID",
+    "target_column": "ENTPR_CUST_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "INDIV_ENTPR_ID",
+    "target_column": "INDIV_ENTPR_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "AMI",
+    "target_column": "AMI",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "LGCY_MBR_NUM",
+    "target_column": "LGCY_MBR_NUM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "ENTPR_SUBSCRBR_CUST_ID",
+    "target_column": "ENTPR_SUBSCRBR_CUST_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "SRC_MBR_ID",
+    "target_column": "SRC_MBR_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CUST_CHNL_SRC_CD",
+    "target_column": "CUST_CHNL_SRC_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_TY_CD",
+    "target_column": "CASE_TY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_SUB_TY_CD",
+    "target_column": "CASE_SUB_TY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_STAT_CD",
+    "target_column": "CASE_STAT_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_STAT_RSN_CD",
+    "target_column": "CASE_STAT_RSN_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_OPEN_DT",
+    "target_column": "CASE_OPEN_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_OPEN_TM",
+    "target_column": "CASE_OPEN_TM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_OPEN_TS",
+    "target_column": "CASE_OPEN_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_CLS_DT",
+    "target_column": "CASE_CLS_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_CLS_TM",
+    "target_column": "CASE_CLS_TM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_CLS_TS",
+    "target_column": "CASE_CLS_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "ACUITY_CD",
+    "target_column": "ACUITY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "TRTMT_INTSTY_LVL_CD",
+    "target_column": "TRTMT_INTSTY_LVL_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PCPTN_CNSLTV_ACTY_CD",
+    "target_column": "PCPTN_CNSLTV_ACTY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "GAP_INTRVNTN_IND",
+    "target_column": "GAP_INTRVNTN_IND",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CASE_STRTFCTN_LVL_CD",
+    "target_column": "CASE_STRTFCTN_LVL_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_STRTFCTN_LVL_CD",
+    "target_column": "REFRL_STRTFCTN_LVL_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "SNMD_IND",
+    "target_column": "SNMD_IND",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "TRNSPLNT_IND",
+    "target_column": "TRNSPLNT_IND",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "SRC_PRIM_DIAG_CD",
+    "target_column": "SRC_PRIM_DIAG_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PRIM_DIAG_CD",
+    "target_column": "PRIM_DIAG_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PRIM_DIAG_SHRT_DESC",
+    "target_column": "PRIM_DIAG_SHRT_DESC",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PRIM_ICD_VRSN_CD",
+    "target_column": "PRIM_ICD_VRSN_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CM_USR_ID",
+    "target_column": "CM_USR_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CM_USR_KEY",
+    "target_column": "CM_USR_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CM_ASGN_DT",
+    "target_column": "CM_ASGN_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CM_ASGN_TM",
+    "target_column": "CM_ASGN_TM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CM_ASGN_TS",
+    "target_column": "CM_ASGN_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CNSNT_OBTN_IND",
+    "target_column": "CNSNT_OBTN_IND",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "VRBL_CNSNT_DT",
+    "target_column": "VRBL_CNSNT_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "VRBL_CNSNT_TM",
+    "target_column": "VRBL_CNSNT_TM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "VRBL_CNSNT_TS",
+    "target_column": "VRBL_CNSNT_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "WRTN_CNSNT_DT",
+    "target_column": "WRTN_CNSNT_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "WRTN_CNSNT_TM",
+    "target_column": "WRTN_CNSNT_TM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "WRTN_CNSNT_TS",
+    "target_column": "WRTN_CNSNT_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "SRC_SVC_INTRVL_NUM",
+    "target_column": "SRC_SVC_INTRVL_NUM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CLNCL_REFRL_KEY",
+    "target_column": "CLNCL_REFRL_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_ID",
+    "target_column": "REFRL_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "MULT_REFRL_IND",
+    "target_column": "MULT_REFRL_IND",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_REQ_DT",
+    "target_column": "REFRL_REQ_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_REQ_TM",
+    "target_column": "REFRL_REQ_TM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_REQ_TS",
+    "target_column": "REFRL_REQ_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_REQ_BY_CD",
+    "target_column": "REFRL_REQ_BY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_REQ_RSN_CD",
+    "target_column": "REFRL_REQ_RSN_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_CMMNT_TXT",
+    "target_column": "REFRL_CMMNT_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_ASGN_TO_USR_KEY",
+    "target_column": "REFRL_ASGN_TO_USR_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_ASGN_TO_USR_ID",
+    "target_column": "REFRL_ASGN_TO_USR_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_DETRMTN_STAT_CD",
+    "target_column": "REFRL_DETRMTN_STAT_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_DETRMTN_DT",
+    "target_column": "REFRL_DETRMTN_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_DETRMTN_TM",
+    "target_column": "REFRL_DETRMTN_TM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_DETRMTN_TS",
+    "target_column": "REFRL_DETRMTN_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_DETRMD_BY_USR_KEY",
+    "target_column": "REFRL_DETRMD_BY_USR_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_DETRMD_BY_USR_ID",
+    "target_column": "REFRL_DETRMD_BY_USR_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_ACCPT_RSN_CD",
+    "target_column": "REFRL_ACCPT_RSN_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_DECLN_RSN_CD",
+    "target_column": "REFRL_DECLN_RSN_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_SRC_CRET_TS",
+    "target_column": "REFRL_SRC_CRET_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_SRC_LAST_UPDT_TS",
+    "target_column": "REFRL_SRC_LAST_UPDT_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_CRET_BY_USR_KEY",
+    "target_column": "REFRL_CRET_BY_USR_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_CRET_BY_USR_ID",
+    "target_column": "REFRL_CRET_BY_USR_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_LAST_UPDT_BY_USR_KEY",
+    "target_column": "REFRL_LAST_UPDT_BY_USR_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "REFRL_LAST_UPDT_BY_USR_ID",
+    "target_column": "REFRL_LAST_UPDT_BY_USR_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CUST_QUERY_PAS_RSLT_ID",
+    "target_column": "CUST_QUERY_PAS_RSLT_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CUST_PRVCY_PREFNC_DTL_SV_KEY",
+    "target_column": "CUST_PRVCY_PREFNC_DTL_SV_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CUST_LAST_NM",
+    "target_column": "CUST_LAST_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CUST_FRST_NM",
+    "target_column": "CUST_FRST_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CUST_POSTL_CD",
+    "target_column": "CUST_POSTL_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "RPT_SEG_CD",
+    "target_column": "RPT_SEG_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "MED_MGMNT_PLAN_CD",
+    "target_column": "MED_MGMNT_PLAN_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "BASE_HMO_CD",
+    "target_column": "BASE_HMO_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "HMO_CD",
+    "target_column": "HMO_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "NT_ID",
+    "target_column": "NT_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "BASE_NT_ID",
+    "target_column": "BASE_NT_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "NPO_NT_ID",
+    "target_column": "NPO_NT_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "MPO_NT_ID",
+    "target_column": "MPO_NT_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "MPO_NT_NM",
+    "target_column": "MPO_NT_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "NPO_NT_NM",
+    "target_column": "NPO_NT_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PCP_PROV_ID",
+    "target_column": "PCP_PROV_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PCP_RT_AREA_CD",
+    "target_column": "PCP_RT_AREA_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PCP_RT_MRKT_CD",
+    "target_column": "PCP_RT_MRKT_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PCP_RT_REGN_CD",
+    "target_column": "PCP_RT_REGN_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "RT_TY_CD",
+    "target_column": "RT_TY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "RT_AREA_CD",
+    "target_column": "RT_AREA_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "RT_MRKT_CD",
+    "target_column": "RT_MRKT_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "RT_REGN_CD",
+    "target_column": "RT_REGN_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "FUND_ARNGMT_TY_CD",
+    "target_column": "FUND_ARNGMT_TY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "PROV_ORG_RISK_GRP_ID",
+    "target_column": "PROV_ORG_RISK_GRP_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "BASE_PROV_ORG_RISK_GRP_ID",
+    "target_column": "BASE_PROV_ORG_RISK_GRP_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "MEDCR_AS_PRIM_IND",
+    "target_column": "MEDCR_AS_PRIM_IND",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "HLTH_INS_EXCHG_SLD_CD",
+    "target_column": "HLTH_INS_EXCHG_SLD_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "HHVI_NM",
+    "target_column": "HHVI_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "SRC_CRET_TS",
+    "target_column": "SRC_CRET_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "SRC_LAST_UPDT_TS",
+    "target_column": "SRC_LAST_UPDT_TS",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CRET_BY_USR_KEY",
+    "target_column": "CRET_BY_USR_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CRET_BY_USR_ID",
+    "target_column": "CRET_BY_USR_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "LAST_UPDT_BY_USR_KEY",
+    "target_column": "LAST_UPDT_BY_USR_KEY",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "LAST_UPDT_BY_USR_ID",
+    "target_column": "LAST_UPDT_BY_USR_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "FINANCL_SUB_SEG_ID",
+    "target_column": "FINANCL_SUB_SEG_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "FINANCL_SEG_ID",
+    "target_column": "FINANCL_SEG_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "DERV_TRNSPLNT_IND",
+    "target_column": "DERV_TRNSPLNT_IND",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "DUNS_NUM",
+    "target_column": "DUNS_NUM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "ELGBTY_BRNCH_NUM",
+    "target_column": "ELGBTY_BRNCH_NUM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "ELGBTY_BRNCH_NM",
+    "target_column": "ELGBTY_BRNCH_NM",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CUST_BRTH_DT",
+    "target_column": "CUST_BRTH_DT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "EXTRNL_MEMBR_ID",
+    "target_column": "EXTRNL_CUST_ID",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "SUBSCRBR_SSN",
+    "target_column": "SUBSCRBR_SSN",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "OTHR_REQ_RSN_TXT",
+    "target_column": "OTHR_REQ_RSN_TXT",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "TPA_FUND_ARNGMT_TY_CD",
+    "target_column": "TPA_FUND_ARNGMT_TY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "BRND_EXPER_CD",
+    "target_column": "BRND_EXPER_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "CNTRCT_LGL_ENTTY_CD",
+    "target_column": "CNTRCT_LGL_ENTTY_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  },
+  {
+    "source_table": "CCW_STG.CLNCL_INTGRD_CASE_SV",
+    "target_table": "CCW_VIEW.CLNCL_INTGRD_CASE_SV",
+    "temp": false,
+    "file": "test_5.py",
+    "source_column": "DATA_RESTRCN_LVL_CD",
+    "target_column": "DATA_RESTRCN_LVL_CD",
+    "mapping_rule": "DIRECT_MOVE"
+  }
+]

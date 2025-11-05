@@ -63,18 +63,50 @@ python -m lineage scan PATH/TO/PROJECT \
 | `--ref`          | Ref (branch/tag/commit) to checkout when using `--repo`. Overrides any ref in the URL.            | `--ref release-2024.03` |
 | `--repo-subpath` | Subdirectory inside the cloned repo to scan. Overrides path parsed from the URL.                 | `--repo-subpath src/jobs` |
 | `--patterns`     | Override the patterns YAML to load (otherwise inferred from the config).                         | `--patterns config/custom_patterns.yaml` |
+| `--template-overrides` | Merge additional template variables from a YAML file for this run.                           | `--template-overrides overrides/chnl_trcr.yaml` |
 
 Example `config/config.yaml`:
 
 ```yaml
+common_config:
+  lz_dbname: CCW_LZ
+  base_dbname: CCW_BASE
+  ccw_aud: CCW_AUD
+  stg_dbname: CCW_STG
+  view_dbname: CCW_VIEW
+
 label_overrides:
   "{{common_config.lz_dbname}}": CCW_LZ
   "{{common_config.base_dbname}}": CCW_BASE
   "{{common_config.ccw_aud}}": CCW_AUD
   "{{common_config.stg_dbname}}": CCW_STG
   "{{common_config.view_dbname}}": CCW_VIEW
+
+template_variables:
+  ccw_view: CCW_VIEW
+  ccw_base: CCW_BASE
+  ccw_stg: CCW_STG
+  proj_nm: PROJECT_NAME
+  chnl_src_cd: CHNL_SRC
+
 patterns_file: patterns.yaml
 ```
+
+- **common_config** – key/value pairs that replace `common_config[...]` lookups in Python code. In the example above, `common_config['base_dbname']` becomes `CCW_BASE`.
+- **label_overrides** – optional post-processing of table names in the JSON/CSV output. For instance, if the SQL references `${common_config.view_dbname}`, the output will show `CCW_VIEW` once label overrides are applied.
+- **template_variables** – simple string substitutions for `${var}` placeholders embedded directly in SQL literals (useful when ETL scripts use templating or environment variables).
+- **patterns_file** – optional pointer to a YAML file that lists additional SQL execution patterns the extractor should recognise. This is helpful if your codebase uses custom wrappers or direct `cursor.execute` calls.
+
+You can also supply run-specific template overrides without editing the main config:
+
+```yaml
+# overrides/chnl_trcr.yaml
+template_overrides:
+  chnl_src_cd: TRCR
+  tbl_nm: TMP_CASE_MV_BASE_TRCR
+```
+
+Invoke the scanner with `--template-overrides overrides/chnl_trcr.yaml` to merge these values for that run.
 
 And the accompanying `config/patterns.yaml` might contain:
 
@@ -191,4 +223,10 @@ The list of SQL execution patterns lives in `lineage/extractor/patterns.py`. Eac
 - The call-path to match (e.g., `("ccw", "Statement")` or `("Statement",)`), and
 - Which positional/keyword argument carries the SQL string.
 
-Add new patterns (for example, to support `cursor.execute(...)`) by editing `config/patterns.yaml` (or supplying your own via `--patterns`). The registry is loaded at runtime; no code changes are required.
+Add new patterns (for example, to support `cursor.execute(...)`) by editing `config/patterns.yaml` (or supplying your own file via `--patterns`). Each entry accepts:
+
+- `path`: An array or dotted string representing the call chain (`["cursor", "execute"]` or `"cursor.execute"`).
+- `arg_index`: Optional zero-based index indicating which positional argument contains the SQL string. Set to `null` to skip positional arguments.
+- `arg_name`: Optional keyword name when SQL is passed as a named argument (e.g., `statement=`).
+
+The registry is loaded at runtime, so you can tailor SQL detection to your project without touching Python code.

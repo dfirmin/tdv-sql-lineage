@@ -196,7 +196,7 @@ def _extract_targets(
         else:
             table = table_expr
         if isinstance(table, exp.Table):
-            targets.append((_table_name(table, replacements), False, table))
+            targets.append((_resolved_table_name(table, expression, replacements), False, table))
     elif isinstance(expression, exp.Create):
         table_expr = expression.this
         if isinstance(table_expr, exp.Schema):
@@ -204,16 +204,34 @@ def _extract_targets(
         else:
             table = table_expr
         if isinstance(table, exp.Table):
-            targets.append((_table_name(table, replacements), _is_volatile(expression), table))
+            targets.append((_resolved_table_name(table, expression, replacements), _is_volatile(expression), table))
     elif isinstance(expression, exp.Update):
         table = expression.this
         if isinstance(table, exp.Table):
-            targets.append((_table_name(table, replacements), False, table))
+            targets.append((_resolved_table_name(table, expression, replacements), False, table))
     elif isinstance(expression, exp.Delete):
-        table = expression.this
-        if isinstance(table, exp.Table):
-            targets.append((_table_name(table, replacements), False, table))
+        return targets
     return targets
+
+
+def _resolved_table_name(
+    table: exp.Table, expression: exp.Expression, replacements: Dict[str, str]
+) -> str:
+    name = _table_name(table, replacements)
+    if name and name != table.alias_or_name:
+        return name
+
+    alias = table.alias_or_name
+    from_clause = expression.args.get("from")
+    if alias and isinstance(from_clause, exp.From):
+        for candidate in from_clause.find_all(exp.Table):
+            if candidate is table:
+                continue
+            if candidate.alias_or_name == alias:
+                resolved = _table_name(candidate, replacements)
+                if resolved:
+                    return resolved
+    return name
 
 
 def _build_alias_map(expression: exp.Expression, replacements: Dict[str, str]) -> Dict[str, str]:

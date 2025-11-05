@@ -1,0 +1,3 @@
+template_overrides:
+  chnl_src_cd: CHNL_SRC_CD
+  tbl_nm: CLNCL_INTGRD_CASE_SV
