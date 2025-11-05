@@ -67,12 +67,27 @@ python -m lineage scan PATH/TO/PROJECT \
 Example `config/config.yaml`:
 
 ```yaml
+common_config:
+  lz_dbname: CCW_LZ
+  base_dbname: CCW_BASE
+  ccw_aud: CCW_AUD
+  stg_dbname: CCW_STG
+  view_dbname: CCW_VIEW
+
 label_overrides:
   "{{common_config.lz_dbname}}": CCW_LZ
   "{{common_config.base_dbname}}": CCW_BASE
   "{{common_config.ccw_aud}}": CCW_AUD
   "{{common_config.stg_dbname}}": CCW_STG
   "{{common_config.view_dbname}}": CCW_VIEW
+
+template_variables:
+  ccw_view: CCW_VIEW
+  ccw_base: CCW_BASE
+  ccw_stg: CCW_STG
+  proj_nm: PROJECT_NAME
+  chnl_src_cd: CHNL_SRC
+
 patterns_file: patterns.yaml
 ```
 

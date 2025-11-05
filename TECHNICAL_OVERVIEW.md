@@ -25,6 +25,7 @@ Thin wrapper that calls `cli.main()` when the package is executed via `python -m
 - Loads YAML configuration files. Supports a mixed payload:
   - `common_config`: key/value pairs used by the AST extractor when it encounters `common_config['key']`.
   - `label_overrides` (or `output_labels`): string replacements applied to table names before writing JSON.
+  - `template_variables`: simple `${var}` substitutions applied to raw SQL strings (useful for templated ETL code).
 - Resolves SQL execution patterns from either inline config (`patterns:`) or companion files such as `patterns.yaml`.
 - Optionally clones remote Git repositories (`--repo`, `--ref`, `--repo-subpath`) into a temporary directory before scanning.
 - Validates user input, combines `--path` and repeated `--file` arguments, and calls `scan_paths`.

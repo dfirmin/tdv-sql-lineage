@@ -33,6 +33,7 @@ def scan_paths(
     infer: bool = False,
     repo_contexts: Optional[Dict[Path, RepoContext]] = None,
     patterns: Optional[Sequence[CallPattern]] = None,
+    template_variables: Optional[Dict[str, str]] = None,
 ) -> List[LineageEdge]:
     """Scan *paths* (files or directories) and return lineage edges."""
 
@@ -48,11 +49,23 @@ def scan_paths(
         except OSError:
             pass
     active_patterns: Sequence[CallPattern] = patterns or DEFAULT_PATTERNS
+    template_vars: Dict[str, str] = {
+        key: str(value)
+        for key, value in (template_variables or {}).items()
+    }
     for path in paths:
         context = resolved_map.get(path)
         if context is None:
             context = resolved_map.get(path.resolve())
-        edges.extend(_scan_single_path(path, normalized_config, context, active_patterns))
+        edges.extend(
+            _scan_single_path(
+                path,
+                normalized_config,
+                context,
+                active_patterns,
+                template_vars,
+            )
+        )
 
     deduped = _deduplicate_edges(edges)
     if infer:
@@ -69,6 +82,7 @@ def scan_path(
     infer: bool = False,
     repo_context: Optional[RepoContext] = None,
     patterns: Optional[Sequence[CallPattern]] = None,
+    template_variables: Optional[Dict[str, str]] = None,
 ) -> List[LineageEdge]:
     """Scan a single *path* for Python files and return lineage edges."""
 
@@ -79,6 +93,7 @@ def scan_path(
         infer=infer,
         repo_contexts=context_map,
         patterns=patterns,
+        template_variables=template_variables,
     )
 
 
@@ -87,6 +102,7 @@ def _scan_single_path(
     normalized_config: Dict[str, str],
     repo_context: Optional[RepoContext],
     patterns: Sequence[CallPattern],
+    template_variables: Dict[str, str],
 ) -> List[LineageEdge]:
     files = _gather_files(path)
     base_dir = path if path.is_dir() else path.parent
@@ -97,6 +113,7 @@ def _scan_single_path(
             file_path,
             normalized_config,
             patterns=patterns,
+            template_variables=template_variables,
         )
         rel_path = _relative_path(file_path, base_dir)
         if repo_context:

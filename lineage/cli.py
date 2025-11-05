@@ -39,6 +39,12 @@ def main(argv: Optional[list[str]] = None) -> None:
         config_path = Path(args.config)
         common_config, label_overrides, config_payload = _load_scan_config(config_path)
 
+    template_variables: Dict[str, str] = {}
+    if isinstance(config_payload.get("template_variables"), dict):
+        template_variables = {
+            str(key): str(value) for key, value in config_payload["template_variables"].items()
+        }
+
     pattern_specs: List[Dict[str, Any]] = []
 
     repo_tempdir: Optional[tempfile.TemporaryDirectory] = None
@@ -103,6 +109,7 @@ def main(argv: Optional[list[str]] = None) -> None:
             infer=args.infer,
             repo_contexts=repo_context_map,
             patterns=patterns,
+            template_variables=template_variables,
         )
         output_path = Path(args.output)
         write_lineage(edges, output_path, label_overrides=label_overrides)
