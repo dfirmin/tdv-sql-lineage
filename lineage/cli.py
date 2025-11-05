@@ -44,6 +44,10 @@ def main(argv: Optional[list[str]] = None) -> None:
         template_variables = {
             str(key): str(value) for key, value in config_payload["template_variables"].items()
         }
+    if args.template_overrides:
+        template_variables.update(
+            _load_template_overrides_file(Path(args.template_overrides))
+        )
 
     pattern_specs: List[Dict[str, Any]] = []
 
@@ -167,6 +171,10 @@ def _build_parser() -> argparse.ArgumentParser:
         "--patterns",
         help="Optional YAML file describing additional SQL execution patterns",
     )
+    scan_parser.add_argument(
+        "--template-overrides",
+        help="Optional YAML file with template variable overrides",
+    )
     return parser
 
 
@@ -278,6 +286,27 @@ def _load_patterns_file(path: Path) -> List[Dict[str, Any]]:
     if isinstance(loaded, list):
         return loaded  # type: ignore[return-value]
     raise ValueError("Patterns file must contain either a list or a mapping with a 'patterns' list")
+
+
+def _load_template_overrides_file(path: Path) -> Dict[str, str]:
+    if not path.exists():
+        raise FileNotFoundError(f"Template overrides file not found: {path}")
+    text = path.read_text(encoding="utf-8")
+    try:
+        loaded = yaml.safe_load(text)
+    except yaml.YAMLError as exc:
+        raise ValueError(f"Failed to parse template overrides file '{path}': {exc}") from exc
+
+    data: Dict[str, str] = {}
+    if isinstance(loaded, dict):
+        for key, value in loaded.items():
+            if key == "template_overrides" and isinstance(value, dict):
+                for inner_key, inner_value in value.items():
+                    data[str(inner_key)] = str(inner_value)
+            else:
+                data[str(key)] = str(value)
+        return data
+    raise ValueError("Template overrides file must be a mapping or contain a 'template_overrides' mapping")
 
 
 __all__ = ["main"]

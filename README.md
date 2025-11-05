@@ -63,6 +63,7 @@ python -m lineage scan PATH/TO/PROJECT \
 | `--ref`          | Ref (branch/tag/commit) to checkout when using `--repo`. Overrides any ref in the URL.            | `--ref release-2024.03` |
 | `--repo-subpath` | Subdirectory inside the cloned repo to scan. Overrides path parsed from the URL.                 | `--repo-subpath src/jobs` |
 | `--patterns`     | Override the patterns YAML to load (otherwise inferred from the config).                         | `--patterns config/custom_patterns.yaml` |
+| `--template-overrides` | Merge additional template variables from a YAML file for this run.                           | `--template-overrides overrides/chnl_trcr.yaml` |
 
 Example `config/config.yaml`:
 
@@ -95,6 +96,17 @@ patterns_file: patterns.yaml
 - **label_overrides** – optional post-processing of table names in the JSON/CSV output. For instance, if the SQL references `${common_config.view_dbname}`, the output will show `CCW_VIEW` once label overrides are applied.
 - **template_variables** – simple string substitutions for `${var}` placeholders embedded directly in SQL literals (useful when ETL scripts use templating or environment variables).
 - **patterns_file** – optional pointer to a YAML file that lists additional SQL execution patterns the extractor should recognise. This is helpful if your codebase uses custom wrappers or direct `cursor.execute` calls.
+
+You can also supply run-specific template overrides without editing the main config:
+
+```yaml
+# overrides/chnl_trcr.yaml
+template_overrides:
+  chnl_src_cd: TRCR
+  tbl_nm: TMP_CASE_MV_BASE_TRCR
+```
+
+Invoke the scanner with `--template-overrides overrides/chnl_trcr.yaml` to merge these values for that run.
 
 And the accompanying `config/patterns.yaml` might contain:
 
