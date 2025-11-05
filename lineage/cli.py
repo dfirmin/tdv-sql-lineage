@@ -1,14 +1,16 @@
 from __future__ import annotations
 
 import argparse
-import json
 import re
 import subprocess
 import tempfile
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, List
 
-from .analyzer import RepoContext, scan_paths, write_lineage
+import yaml
+
+from .analyzer import RepoContext, scan_paths, write_lineage, write_lineage_csv
+from .extractor.patterns import load_patterns_from_specs
 
 
 def main(argv: Optional[list[str]] = None) -> None:
@@ -31,8 +33,13 @@ def main(argv: Optional[list[str]] = None) -> None:
     repo_context_map: Dict[Path, RepoContext] = {}
     common_config: Dict[str, Any] = {}
     label_overrides: Dict[str, str] = {}
+    config_payload: Dict[str, Any] = {}
+    config_path: Optional[Path] = None
     if args.config:
-        common_config, label_overrides = _load_scan_config(args.config)
+        config_path = Path(args.config)
+        common_config, label_overrides, config_payload = _load_scan_config(config_path)
+
+    pattern_specs: List[Dict[str, Any]] = []
 
     repo_tempdir: Optional[tempfile.TemporaryDirectory] = None
     try:
@@ -69,14 +76,39 @@ def main(argv: Optional[list[str]] = None) -> None:
         if not target_paths:
             parser.error("provide a local path/--file or specify --repo")
 
+        # Determine pattern specifications
+        if args.patterns:
+            pattern_specs.extend(_load_patterns_file(Path(args.patterns)))
+        elif isinstance(config_payload.get("patterns"), list):
+            pattern_specs.extend(config_payload.get("patterns"))
+        else:
+            pattern_path: Optional[Path] = None
+            specified = config_payload.get("patterns_file")
+            if specified:
+                pattern_path = Path(specified)
+            elif config_path is not None:
+                candidate = config_path.parent / "patterns.yaml"
+                if candidate.exists():
+                    pattern_path = candidate
+            if pattern_path is not None:
+                if config_path is not None and not pattern_path.is_absolute():
+                    pattern_path = (config_path.parent / pattern_path).resolve()
+                pattern_specs.extend(_load_patterns_file(pattern_path))
+
+        patterns = load_patterns_from_specs(pattern_specs)
+
         edges = scan_paths(
             target_paths,
             common_config=common_config,
             infer=args.infer,
             repo_contexts=repo_context_map,
+            patterns=patterns,
         )
         output_path = Path(args.output)
         write_lineage(edges, output_path, label_overrides=label_overrides)
+        if args.csv_output:
+            csv_path = Path(args.csv_output)
+            write_lineage_csv(edges, csv_path, label_overrides=label_overrides)
     finally:
         if repo_tempdir is not None:
             repo_tempdir.cleanup()
@@ -100,13 +132,17 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     scan_parser.add_argument(
         "--config",
-        help="Path to JSON configuration file containing a 'common_config' mapping",
+        help="Path to YAML configuration file with 'common_config', 'label_overrides', etc.",
     )
     scan_parser.add_argument(
         "--output", default="lineage.json", help="Destination JSON file for lineage results"
     )
     scan_parser.add_argument(
         "--infer", action="store_true", help="Infer multi-hop lineage through volatile tables"
+    )
+    scan_parser.add_argument(
+        "--csv-output",
+        help="Optional CSV file to generate alongside JSON output",
     )
     scan_parser.add_argument(
         "--repo",
@@ -120,35 +156,47 @@ def _build_parser() -> argparse.ArgumentParser:
         "--repo-subpath",
         help="Optional subdirectory inside the cloned repository to scan (e.g. 'test').",
     )
+    scan_parser.add_argument(
+        "--patterns",
+        help="Optional YAML file describing additional SQL execution patterns",
+    )
     return parser
 
 
-def _load_scan_config(config_path: str) -> Tuple[Dict[str, Any], Dict[str, str]]:
-    payload = json.loads(Path(config_path).read_text(encoding="utf-8"))
+def _load_scan_config(config_path: Path) -> Tuple[Dict[str, Any], Dict[str, str], Dict[str, Any]]:
+    text = config_path.read_text(encoding="utf-8")
+    payload: Dict[str, Any]
+    try:
+        loaded = yaml.safe_load(text)
+    except yaml.YAMLError as exc:
+        raise ValueError(f"Failed to parse YAML config '{config_path}': {exc}") from exc
+    if loaded is None:
+        payload = {}
+    elif isinstance(loaded, dict):
+        payload = loaded
+    else:
+        raise ValueError("Configuration must be a mapping")
+
     common_config: Dict[str, Any] = {}
     label_overrides: Dict[str, str] = {}
 
-    if not isinstance(payload, dict):
-        raise ValueError("Configuration file must contain a JSON object")
-
-    if "common_config" in payload:
-        candidate = payload["common_config"]
-        if isinstance(candidate, dict):
-            common_config = candidate
+    if "common_config" in payload and isinstance(payload["common_config"], dict):
+        common_config = payload["common_config"]
     else:
         residual = {
             key: value
             for key, value in payload.items()
-            if key not in {"label_overrides", "output_labels"}
+            if key not in {"label_overrides", "output_labels", "patterns", "patterns_file"}
         }
-        common_config = residual
+        if residual:
+            common_config = residual
 
     raw_overrides = payload.get("label_overrides") or payload.get("output_labels")
     if isinstance(raw_overrides, dict):
         label_overrides = {str(key): str(value) for key, value in raw_overrides.items()}
 
     normalized_common = {key: str(value) for key, value in common_config.items()}
-    return normalized_common, label_overrides
+    return normalized_common, label_overrides, payload
 
 
 def _materialize_repo(
@@ -188,17 +236,41 @@ def _materialize_repo(
     return [target], repo_url, clone_dir, effective_subpath
 
 
-GITHUB_TREE_PATTERN = re.compile(
-    r"^(https://github\.com/[^/]+/[^/]+)(?:/tree/([^/]+)(?:/(.*))?)?$"
+# Match GitHub.com and GitHub Enterprise hosts.
+TREE_PATTERN = re.compile(
+    r"^(https://[^/]+/[^/]+/[^/]+)(?:/tree/([^/]+)(?:/(.*))?)?$"
+)
+BLOB_PATTERN = re.compile(
+    r"^(https://[^/]+/[^/]+/[^/]+)/blob/([^/]+)/(.*)$"
 )
 
 
 def _parse_repo_arg(repo_arg: str) -> Tuple[str, Optional[str], Optional[str]]:
-    matched = GITHUB_TREE_PATTERN.match(repo_arg)
-    if matched:
-        base_url, ref, subpath = matched.groups()
+    tree_match = TREE_PATTERN.match(repo_arg)
+    if tree_match:
+        base_url, ref, subpath = tree_match.groups()
+        return base_url, ref, subpath
+    blob_match = BLOB_PATTERN.match(repo_arg)
+    if blob_match:
+        base_url, ref, subpath = blob_match.groups()
         return base_url, ref, subpath
     return repo_arg, None, None
+
+
+def _load_patterns_file(path: Path) -> List[Dict[str, Any]]:
+    if not path.exists():
+        raise FileNotFoundError(f"Pattern file not found: {path}")
+    text = path.read_text(encoding="utf-8")
+    try:
+        loaded = yaml.safe_load(text)
+    except yaml.YAMLError as exc:
+        raise ValueError(f"Failed to parse patterns file '{path}': {exc}") from exc
+
+    if isinstance(loaded, dict) and isinstance(loaded.get("patterns"), list):
+        return loaded["patterns"]  # type: ignore[return-value]
+    if isinstance(loaded, list):
+        return loaded  # type: ignore[return-value]
+    raise ValueError("Patterns file must contain either a list or a mapping with a 'patterns' list")
 
 
 __all__ = ["main"]

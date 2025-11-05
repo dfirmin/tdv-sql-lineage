@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+import csv
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 from .extractor.ast_extractor import extract_statements_from_file
+from .extractor.patterns import CallPattern, DEFAULT_PATTERNS
 from .parser.sql_parser import LineageEdge, parse_sql_lineage
 
 
@@ -30,6 +32,7 @@ def scan_paths(
     common_config: Optional[Dict[str, object]] = None,
     infer: bool = False,
     repo_contexts: Optional[Dict[Path, RepoContext]] = None,
+    patterns: Optional[Sequence[CallPattern]] = None,
 ) -> List[LineageEdge]:
     """Scan *paths* (files or directories) and return lineage edges."""
 
@@ -44,11 +47,12 @@ def scan_paths(
             resolved_map[key.resolve()] = value
         except OSError:
             pass
+    active_patterns: Sequence[CallPattern] = patterns or DEFAULT_PATTERNS
     for path in paths:
         context = resolved_map.get(path)
         if context is None:
             context = resolved_map.get(path.resolve())
-        edges.extend(_scan_single_path(path, normalized_config, context))
+        edges.extend(_scan_single_path(path, normalized_config, context, active_patterns))
 
     deduped = _deduplicate_edges(edges)
     if infer:
@@ -64,24 +68,36 @@ def scan_path(
     common_config: Optional[Dict[str, object]] = None,
     infer: bool = False,
     repo_context: Optional[RepoContext] = None,
+    patterns: Optional[Sequence[CallPattern]] = None,
 ) -> List[LineageEdge]:
     """Scan a single *path* for Python files and return lineage edges."""
 
     context_map = {path: repo_context} if repo_context else None
-    return scan_paths([path], common_config=common_config, infer=infer, repo_contexts=context_map)
+    return scan_paths(
+        [path],
+        common_config=common_config,
+        infer=infer,
+        repo_contexts=context_map,
+        patterns=patterns,
+    )
 
 
 def _scan_single_path(
     path: Path,
     normalized_config: Dict[str, str],
-    repo_context: Optional[RepoContext] = None,
+    repo_context: Optional[RepoContext],
+    patterns: Sequence[CallPattern],
 ) -> List[LineageEdge]:
     files = _gather_files(path)
     base_dir = path if path.is_dir() else path.parent
 
     edges: List[LineageEdge] = []
     for file_path in files:
-        statements = extract_statements_from_file(file_path, normalized_config)
+        statements = extract_statements_from_file(
+            file_path,
+            normalized_config,
+            patterns=patterns,
+        )
         rel_path = _relative_path(file_path, base_dir)
         if repo_context:
             url = repo_context.file_url(file_path)
@@ -193,4 +209,50 @@ def _apply_label_override(value: Optional[str], overrides: Dict[str, str]) -> Op
     return result
 
 
-__all__ = ["scan_path", "scan_paths", "write_lineage", "LineageEdge", "RepoContext"]
+def write_lineage_csv(
+    edges: List[LineageEdge],
+    output_path: Path,
+    *,
+    label_overrides: Optional[Dict[str, str]] = None,
+) -> None:
+    overrides = label_overrides or {}
+    headers = [
+        "source_table",
+        "source_column",
+        "target_table",
+        "target_column",
+        "temp",
+        "mapping_rule",
+        "file",
+        "function",
+        "inferred",
+    ]
+    with output_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=headers)
+        writer.writeheader()
+        for edge in edges:
+            source = _apply_label_override(edge.source, overrides)
+            target = _apply_label_override(edge.target, overrides)
+            writer.writerow(
+                {
+                    "source_table": source or "",
+                    "source_column": edge.source_column or "",
+                    "target_table": target or "",
+                    "target_column": edge.target_column or "",
+                    "temp": str(edge.temp).lower(),
+                    "mapping_rule": edge.mapping_rule or "",
+                    "file": edge.file or "",
+                    "function": edge.function or "",
+                    "inferred": str(edge.inferred).lower(),
+                }
+            )
+
+
+__all__ = [
+    "scan_path",
+    "scan_paths",
+    "write_lineage",
+    "write_lineage_csv",
+    "LineageEdge",
+    "RepoContext",
+]
