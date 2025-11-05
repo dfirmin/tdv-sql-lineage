@@ -91,6 +91,11 @@ template_variables:
 patterns_file: patterns.yaml
 ```
 
+- **common_config** – key/value pairs that replace `common_config[...]` lookups in Python code. In the example above, `common_config['base_dbname']` becomes `CCW_BASE`.
+- **label_overrides** – optional post-processing of table names in the JSON/CSV output. For instance, if the SQL references `${common_config.view_dbname}`, the output will show `CCW_VIEW` once label overrides are applied.
+- **template_variables** – simple string substitutions for `${var}` placeholders embedded directly in SQL literals (useful when ETL scripts use templating or environment variables).
+- **patterns_file** – optional pointer to a YAML file that lists additional SQL execution patterns the extractor should recognise. This is helpful if your codebase uses custom wrappers or direct `cursor.execute` calls.
+
 And the accompanying `config/patterns.yaml` might contain:
 
 ```yaml
@@ -206,4 +211,10 @@ The list of SQL execution patterns lives in `lineage/extractor/patterns.py`. Eac
 - The call-path to match (e.g., `("ccw", "Statement")` or `("Statement",)`), and
 - Which positional/keyword argument carries the SQL string.
 
-Add new patterns (for example, to support `cursor.execute(...)`) by editing `config/patterns.yaml` (or supplying your own via `--patterns`). The registry is loaded at runtime; no code changes are required.
+Add new patterns (for example, to support `cursor.execute(...)`) by editing `config/patterns.yaml` (or supplying your own file via `--patterns`). Each entry accepts:
+
+- `path`: An array or dotted string representing the call chain (`["cursor", "execute"]` or `"cursor.execute"`).
+- `arg_index`: Optional zero-based index indicating which positional argument contains the SQL string. Set to `null` to skip positional arguments.
+- `arg_name`: Optional keyword name when SQL is passed as a named argument (e.g., `statement=`).
+
+The registry is loaded at runtime, so you can tailor SQL detection to your project without touching Python code.
