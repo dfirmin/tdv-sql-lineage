@@ -210,9 +210,7 @@ def _extract_targets(
         if isinstance(table, exp.Table):
             targets.append((_resolved_table_name(table, expression, replacements), False, table))
     elif isinstance(expression, exp.Delete):
-        table = expression.this
-        if isinstance(table, exp.Table):
-            targets.append((_resolved_table_name(table, expression, replacements), False, table))
+        return targets
     return targets
 
 
